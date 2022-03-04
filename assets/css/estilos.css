@@ -1,8 +1,12 @@
+/*-START- Default settings*/
+
+/* CSS reset: ayuda a evitar diferencias visuales entre navegadores*/
 * {
     Margin:0;
     padding:0;
  }
- 
+
+/*Formato por default del texto*/
 body{
     font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
     font-weight: normal;
@@ -10,7 +14,7 @@ body{
     overflow-x: hidden;
 }
 
-/* Cargo las fuentes instaladas en la PC*/
+/*Carga de las fuentes guardades en los assets*/
 @font-face {
 	font-family: 'Metropolis';
 	src: url('../font/Metropolis/Metropolis-Regular.ttf');
@@ -20,27 +24,25 @@ body{
 	src: url('../font/Montserrat/Montserrat-Regular.ttf');
 }
 
+
 h1{
-    display: none;
+    display: none; /*No estoy interesado en que el h1 se vea*/
     color:blue;
     font-family: 'Montserrat';
     overflow-x: visible;
 }
 
+/*Configuracion predeterminada de un parrafo*/
 p {
-    /*text-align: center;*/
     line-height: 16px;
     font-size: 14px;
-    /*
-    border-top:solid 5px red;	border-right:solid 10px cyan;
-    border-bottom:solid 7px green;
-    border-left:solid 12px yellow;
-    */
 }
 
+/*-END- Default settings*/
 
 
-/*Seccion de barra de navegación (y encabezado)*/
+/*-START- Seccion de barra de navegación (y encabezado)*/
+
 header{
     position: sticky;
     top: 0px;
@@ -70,8 +72,7 @@ header nav ul{
 header nav ul li {
    display: inline-block;
    position:relative;
-   /*el borde es solo para el desafío*/
-   border: 1px solid darkviolet;
+   border: 1px solid darkviolet;  /*el borde es solo para el desafío*/
    padding: 2px;
    margin-top: 10px;
    margin-bottom: 10px;
@@ -79,34 +80,34 @@ header nav ul li {
    margin-right: 5px;
    
 }
-    /*Colores de los links*/
-    header nav ul li a {
-        color: black;
-        text-decoration: none;
-    }
-    header nav ul li a:hover {
-        color: darkviolet;
-    }
-    header nav ul li a:active {
-        color: white;
-    }
+header nav ul li a {
+    /*Color (y formato) default de un hipervinculo*/
+    color: black;
+    text-decoration: none;
+}
+header nav ul li a:hover {
+    color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
+}
+header nav ul li a:active {
+    color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
+}
+    
+/*-END- Seccion de barra de navegación (y encabezado)*/
 
-/*Fin Seccion de barra de navegación (y encabezado)*/
 
 
 
-/* Codigo centrado en index */
+/*-START- Codigo centrado en index.html */
+
 main {
     display: block;
     background-color: #FFEDE1;
 }
 
-/*Intro al sitio*/
-/*#IntroEmpresa {
-    display: block;
-}*/
+/*-START- Intro al sitio*/
+
 .Intro{
-    /*celular*/
+    /* Mobile first*/
     display:block;
     width: 100%;
     height: 75%;
@@ -114,12 +115,13 @@ main {
     max-width: 100%;
 }
 @media only screen and (min-width: 720px) {
-    /*pc*/
     .Intro{
+        /*ajustes para pc*/
         display:inline-block;
         max-width: 50%;
     }
 }
+
 .TextoIntro {
     display:block;
     text-align: center;
@@ -137,10 +139,10 @@ main section div{
 }
 
 #IntroMedia{
+    /* Mobile first*/
     display: block;
-    /*el gif es placeholder, no importa deformarlo*/
     height: 360px;
-    width: 360px;
+    width: 360px; /*el gif placeholder no tiene ancho igual a alto*/
     margin: auto;
     padding: 0px;
     border: 0px;
@@ -148,16 +150,17 @@ main section div{
 }
 
 @media only screen and (min-width: 720px) {
-    /*pc*/
     #IntroMedia{
+        /*ajustes para pc*/
         display:inline-block;
     }
 }
-/*Fin intro al sitio*/
+
+/*-END- Intro al sitio*/
 
 
 
-/*politicas y servicio de la empresa*/
+/*-START- Politicas y servicio de la empresa*/
 
 main h2{
     font-size: 36px;
@@ -170,12 +173,12 @@ main h2{
 }
 
 @media only screen and (min-width: 1152px){
-main section div {
-    /*desktop*/
-    display: inline-block;
-    position: relative;
-    margin: auto;
-}
+    main section div {
+        /*ajustes para pc*/
+        display: inline-block;
+        position: relative;
+        margin: auto;
+    }
 }
 
 main section div img{
@@ -201,19 +204,15 @@ main section div p{
     text-align: center;
     /* tamaño de fuente definido en p*/
 }
-/*cierre de pol y serv de la empresa*/
 
+/*-END- Politicas y servicio de la empresa*/
 
-/* Fin del codigo centrado en index */
-
-
-
+/*-END- Codigo centrado en index.html */
 
 
 
 
-
-/* Codigo centrado en accesorios.html */
+/*-START- Codigo centrado en accesorios.html */
 
 /*Los h2 que separan las secciones de las marcas 
 ya estan formateados en la sección de index  */
@@ -233,12 +232,12 @@ main section div iframe{
     height: 180px;
 }
 
-
-/*Fin de codigo centrado en accesorios.html*/
-
+/*-END- Codigo centrado en accesorios.html*/
 
 
-/*Codigo centrado en la mi_pedido.html*/
+
+
+/*-START- Codigo centrado en mi_pedido.html*/
 
 .FormHeader{
     font-size: 32px;
@@ -264,9 +263,12 @@ main section form input{
     display: inline;
 }
 
-/*fin de codigo centrado en la mi_pedido.html*/
+/*-END- Codigo centrado en mi_pedido.html*/
 
-/*Codigo prespuesto.html*/
+
+
+
+/*-START- Codigo centrado en prespuesto.html*/
 
 .FormPresupuesto{
     display:block;
@@ -276,11 +278,13 @@ main section form input{
     display: block;
 }
 
-/*fin Codigo prespuesto.html*/
+/*-END- Codigo centrado en prespuesto.html*/
 
 
 
-/* pie de pagina*/
+
+/*-START- Pie del sitio (igual en todas las paginas)*/
+
 footer{
     display: block;
     position: relative;
@@ -298,4 +302,4 @@ footer h2 img{
     height: 40px;
     width: 40px;
 }
-/* fin pie de pagina*/
+/* -END- Pie del sitio (igual en todas las paginas)*/
