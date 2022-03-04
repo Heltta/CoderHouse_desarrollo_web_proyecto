@@ -1,0 +1,11 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    //https://stackoverflow.com/questions/30039512/how-to-view-an-html-file-in-the-browser-with-visual-studio-code
+    "version": "2.0.0",
+    "command": "explorer",    
+    "windows": {
+        "command": "explorer.exe"
+    },
+    "args": ["index.html"]
+}
