@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuFix - Mi pedido</title>
+    
+    <!--styles sheet-->
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <!--cargar fuentes desde googlefonts-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Geomanist' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+    <h1>LuFix: reparación de celulares - Mi pedido</h1>
+    <!--Encabezado y menu de navegacion-->
+    <header>
+        <h2><img id="Logo" src="../image/logo.png" alt="Logo empresa de reparacion de celulares"></h2>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="mi_pedido.html">Mi pedido</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="seguros.html">Seguros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--cierre de Encabezado y menu de navegacion-->
+    <!--contenido principal de la pagina-->
+    <main>
+        <!--Datos para poder ver estado del pedido-->
+        <section>
+            <h2 class="FormHeader">Estime su presupuesto</h2>
+            <form action="#" method="post">
+                <input type="text" placeholder="Nombre del cliente">
+                <input type="text" placeholder="Apellido del cliente">
+                <input type="email" placeholder="correo@dominio.com">
+                <input type="number" placeholder="Número del pedido o service">
+                <label class="DropBoxLabel" for="puntación"> Valoracion del servicio:
+                    <select  name="puntación"> 
+                        <option value="1">Completamente inconforme</option>
+                        <option value="2">Inconforme</option>
+                        <option value="3">Medianamente Conforme</option>
+                        <option value="4">Conforme</option>
+                        <option value="5">Excelente servicio</option>
+                    </select>
+                </label>
+                <!--cierre Datos para poder ver estado del pedido-->
+                <!--Sección de información opcional-->
+                <label for="acepta recibir noticias"> ¿Quieres recibir noticias y ofertas?:
+                        <input type="checkbox" name="acepta recibir noticias" value="1">
+                </label>
+                <input type="submit" value="Ver el pedido">
+                <input type="reset" value="Borrar datos">
+            </form>
+        </section>
+    </main>
+    <!--cierre de contenido principal de la pagina-->
+    <!--Pie con información de contacto-->
+    <footer>
+		<h2><img src="..\image\phone.png" alt="telefono">+000 12 345 678</h2>
+        <h2><img src="..\image\map_pin.png" alt="direccion">Calle 1234 esq. Calle</h2>
+		<h2><img src="..\image\clock.png" alt="horario">00:00 a 00:00 L a V</h2>
+	</footer>
+    <!--cierre de Pie con información de contacto-->
+</body>
+</html>

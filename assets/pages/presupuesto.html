@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuFix - Presupuesto</title>
+    
+    <!--styles sheet-->
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <!--cargar fuentes desde googlefonts-->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Geomanist' rel='stylesheet' type='text/css'/>
+</head>
+<body>
+    <h1>LuFix: reparación de celulares - Presupuesto</h1>
+    <!--Encabezado y menu de navegacion-->
+    <header>
+        <h2><img id="Logo" src="../image/logo.png" alt="Logo empresa de reparacion de celulares"></h2>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Inicio</a></li>
+                <li><a href="accesorios.html">Accesorios</a></li>
+                <li><a href="mi_pedido.html">Mi pedido</a></li>
+                <li><a href="presupuesto.html">Presupuesto</a></li>
+                <li><a href="seguros.html">Seguros</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--cierre de Encabezado y menu de navegacion-->
+    <!--contenido principal de la pagina-->
+    <main>
+        <!--Datos para hacer un presupuesto automatizado-->
+        <h2 class="FormHeader">Datos del dispositivo</h2>
+        <form class="FormPresupuesto" action="#" method="post">
+
+            <label for="phone_brand"> Marca:
+                <select  name="phone_brand"> 
+                    <option value="brand_00">No sabe</option>
+                    <option value="brand_01">Apple</option>
+                    <option value="brand_02">Xiaomi</option>
+                </select>
+            </label>
+
+            <label for="phone_model"> Modelo:
+                <select  name="phone_model"> 
+                    <option value="brand_00_model_00">No sabe</option>
+                    <option value="brand_01_model_00">No sabe</option>
+                    <option value="brand_01_model_01">iphone 10</option>
+                    <option value="brand_01_model_02">iphone 12</option>
+                    <option value="brand_02_model_00">No sabe</option>
+                    <option value="brand_02_model_01">Redmi 9</option>
+                    <option value="brand_02_model_02">Remi note 9</option>
+                </select>
+            </label>
+                    
+            <label for="phone_damage"> Problema:
+                <select  name="phone_damage"> 
+                    <option value="damage_00">No sabe</option>
+                    <option value="damage_01">Pantalla rota</option>
+                    <option value="damage_02">Sin señal</option>
+                </select>
+            </label>
+            <!--Datos para el envío-->
+            <label for="departamento del domicilio"> Problema:
+                <select  name="departamento del domicilio"> 
+                    <option value="departamento">Montevideo</option>
+                    <option value="departamento">Canelones</option>
+                    <option value="departamento">Maldonado</option>
+                    <option value="departamento">Resto del interior</option>
+                </select>
+            </label>
+            <label for="barrio del domicilio"> Barrio:
+                <select  name="barrio del domicilio"> 
+                    <option value="barrio">No aplica</option>
+                    <option value="barrio">Cordón</option>
+                    <option value="barrio">Pocitos</option>
+                    <option value="barrio">Centro</option>
+                    <option value="barrio">Pta. Carretas</option>
+                </select>
+            </label>
+            <!--cierre Datos para el envío-->
+            <!--cierre Datos para hacer un presupuesto automatizado-->
+            <!--Sección de información opcional-->
+            <input type="submit" value="Estimar presupuesto">
+            <input type="reset" value="Borrar datos">
+        </form>
+    </main>
+    <!--cierre de contenido principal de la pagina-->
+        
+    </main>
+    <!--cierre de contenido principal de la pagina-->
+    <!--Pie con información de contacto-->
+    <footer>
+		<h2><img src="..\image\phone.png" alt="telefono">+000 12 345 678</h2>
+        <h2><img src="..\image\map_pin.png" alt="direccion">Calle 1234 esq. Calle</h2>
+		<h2><img src="..\image\clock.png" alt="horario">00:00 a 00:00 L a V</h2>
+	</footer>
+    <!--cierre de Pie con información de contacto-->
+</body>
+</html>
