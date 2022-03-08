@@ -19,11 +19,9 @@ body{
     display: grid;
     grid-template-areas:
         "Header"
-        "Intro"
-        "PolServ"
-        "Brands"
+        "Main"
         "Footer";
-    grid-template-rows: 90px 544px 448px 346px 64px;
+    grid-template-rows: 90px fit-content(100%) 64px;
     font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
     font-weight: normal;
     font-size: 16px;
@@ -97,9 +95,10 @@ header h2{
     grid-area: home;
     height: 40px;
 }
-#Logo img{
+#Logo svg{
     height: 40px;
     width: auto;
+    max-width: 100%;
 }
 
 header nav{
@@ -166,6 +165,7 @@ header nav ul li a:active {
 /*-START- Codigo centrado en index.html */
 
 main {
+    grid-area: Main;
     display: block;
     background-color: #FFEDE1;
 }
@@ -232,22 +232,43 @@ main h2{
     font-size: 36px;
     border: 0px;
     }
+
+.Info{
+    display: grid;
+    grid-template-areas:
+        "Banner"
+        "Bulk";
+    grid-template-rows: 64px fit-content(100%);
+}
+
 .banner{
     text-align: center;
     background-image: url("../image/45degreee_fabric.png");
     width: 100%;
+    grid-area: Banner;
 }
 
-@media only screen and (min-width: 1152px){
-    main section div {
+.Info section {
+    grid-area: Bulk;
+    display: flex;
+    flex-direction: column;
+}
+@media only screen and (min-width: 1200px){
+    .Info section{
+        /*desktop*/
+        flex-direction: row;
+    }
+
+}
+@media only screen and (min-width: 1200px){
+    main section section div {
         /*ajustes para pc*/
         display: inline-block;
         position: relative;
-        margin: auto;
     }
 }
 
-main section div img{
+main section section div img{
     display: block;
     height: 170px;
     width: 170px;
@@ -257,14 +278,14 @@ main section div img{
     padding: 10px;
     
 }
-main section div h3{
-    font-size: 24px;
+main section section div h3{
+    font-size: 20px;
     margin: auto;
     width: 50%;
     text-align: center;
 }
 
-main section div p{
+main section section div p{
     margin: auto;
     width: 360px;
     text-align: center;
@@ -352,6 +373,7 @@ main section form input{
 /*-START- Pie del sitio (igual en todas las paginas)*/
 
 footer{
+    grid-area: Footer;
     display: block;
     position: relative;
     background-color: #77B6EA;
