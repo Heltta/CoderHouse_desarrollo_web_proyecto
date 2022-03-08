@@ -16,6 +16,14 @@
 
 /*Formato por default del texto*/
 body{
+    display: grid;
+    grid-template-areas:
+        "Header"
+        "Intro"
+        "PolServ"
+        "Brands"
+        "Footer";
+    grid-template-rows: 90px 544px 448px 346px 64px;
     font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
     font-weight: normal;
     font-size: 16px;
@@ -52,26 +60,41 @@ p {
 /*-START- Seccion de barra de navegación (y encabezado)*/
 
 header{
-    display: flex;
-    justify-content: flex-start; /*predeterminado*/
-    flex-direction: row;
+    grid-area: Header; /* es hijo de un grid */
+    /*grid padre*/
+    display: grid;
+    grid-template-areas: 
+        "home . . user"
+        "nav nav nav nav";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
     align-items: center;
+    justify-items: center;
+
+    /*El header queda siempre arriba en la pantalla mientras scrolleamos*/
     position: sticky;
     top: 0px;
-    background-color: #1E91D6;
     z-index: 2;
+    background-color: #1E91D6;
 }
 
-header nav{
-    position: relative;
-    font-size: 36px;
-    width: 100%;
+@media only screen and (min-width: 1024px) {
+    header{
+        /*tablet, desktop*/
+        grid-template-areas: 
+            "home . nav . user";
+        grid-template-columns: 1fr 1fr 8fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
 }
+
 header h2{
     display: none;
 }
 
 #Logo{
+    grid-area: home;
     height: 40px;
 }
 #Logo img{
@@ -79,11 +102,39 @@ header h2{
     width: auto;
 }
 
+header nav{
+    grid-area: nav;
+    position: relative;
+    font-size: 16px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+    header nav{
+        /*small tablet*/
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    header nav{
+        /*tablet, desktop*/
+        font-size: 24px;
+    }
+}
+
 header nav ul{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     list-style: none;
 }
+@media only screen and (min-width: 1024px) {
+    header nav ul{
+        /*tablet, desktop*/
+        justify-content: space-evenly;
+    }
+}
+
 
 header nav ul li {
    display: inline-block;
@@ -100,6 +151,11 @@ header nav ul li a:hover {
 }
 header nav ul li a:active {
     color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
+}
+
+#UserProfile{
+    grid-area: user;
+    height: 40px;
 }
     
 /*-END- Seccion de barra de navegación (y encabezado)*/
@@ -300,7 +356,6 @@ footer{
     position: relative;
     background-color: #77B6EA;
     align-content: center;
-    bottom: 0px;
 }
 
 footer h2{
