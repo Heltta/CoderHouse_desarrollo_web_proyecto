@@ -64,7 +64,7 @@ header{
     grid-template-areas: 
         "home . . user"
         "nav nav nav nav";
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(1fr, 4);
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 20px;
     align-items: center;
@@ -98,12 +98,12 @@ header h2{
 #Logo svg{
     height: 40px;
     width: auto;
-    max-width: 100%; /*Evita que haga overflow de la celda del grid*/
+    max-width: 65px; /*Evita que haga overflow de la celda del grid*/
 }
 
 header nav{
     grid-area: nav;
-    position: relative;
+    /*position: relative;*/
     font-size: 16px; /*Este tamaño varía según la pantalla*/
     width: 100%;
 }
@@ -125,13 +125,9 @@ header nav{
 header nav ul{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     list-style: none;
-}
-@media only screen and (min-width: 1024px) {
-    header nav ul{
-        /*tablet, desktop*/
-        justify-content: space-evenly;
-    }
+    width: inherit;
 }
 
 
@@ -155,6 +151,8 @@ header nav ul li a:active {
 #UserProfile{
     grid-area: user;
     height: 40px;
+    width: auto;
+    max-width: 65px;
 }
     
 /*-END- Seccion de barra de navegación (y encabezado)*/
@@ -367,14 +365,23 @@ main section section div iframe{
 
 
 /*-START- Codigo centrado en mi_pedido.html*/
-
+.Data_Formulary{
+    display: grid;
+    grid-template-areas: 
+                        "Title"
+                        "Data";
+    grid-template-rows: fit-content(100%) fit-content(100%);
+    justify-content: center;
+}
 .FormHeader{
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
+    grid-area: Title;
 }
 
 main section form{
     display: block;
+    grid-area: Data;
 }
 main section form input{
     display:block;
