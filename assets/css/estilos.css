@@ -21,7 +21,7 @@ body{
         "Header"
         "Main"
         "Footer";
-    grid-template-rows: 90px fit-content(100%) 64px;
+    grid-template-rows: 90px fit-content(100%) 94px; /*existe un media query que cambia la ultima fila en el footer section*/
     font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
     font-weight: normal;
     font-size: 16px;
@@ -93,18 +93,18 @@ header h2{
 
 #Logo{
     grid-area: home;
-    height: 40px;
+    height: 40px; 
 }
 #Logo svg{
     height: 40px;
     width: auto;
-    max-width: 100%;
+    max-width: 100%; /*Evita que haga overflow de la celda del grid*/
 }
 
 header nav{
     grid-area: nav;
     position: relative;
-    font-size: 16px;
+    font-size: 16px; /*Este tamaño varía según la pantalla*/
     width: 100%;
 }
 
@@ -186,20 +186,22 @@ main {
     }
 }
 
-.Intro .Description .TextoIntro {
+.Intro .Description .Intro__text{
     display:block;
     text-align: center;
     max-width: 480px;
 }
 
-.Intro .Description .brutoTitulo{
+.Intro .Description .Intro__text--title{
     font-size: 36px;
     border: 0px;
+    padding: 8px 0px;
     margin: auto;
 }
 
 main section div{
     display: inline;
+    padding: 8px 0px;
 }
 
 #IntroMedia{
@@ -224,7 +226,7 @@ main section div{
 
 
 
-/*-START- Politicas y servicio de la empresa*/
+/*-START- Politicas y servicio de la empresa + Marcas con service*/
 
 main h2{
     font-size: 36px;
@@ -237,19 +239,28 @@ main h2{
         "Banner"
         "Bulk";
     grid-template-rows: 64px fit-content(100%);
+    align-items: stretch;
 }
 
-.banner{
+.Info .banner{
     text-align: center;
     background-image: url("../image/45degreee_fabric.png");
     width: 100%;
     grid-area: Banner;
+    align-self: baseline;
+    padding: 10px 0px;
+    font-size: 36px;
+    border: 0px;
 }
 
 .Info section {
+    /*Hijo de grid*/
     grid-area: Bulk;
+    /*Padre Flex*/
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    padding: 8px;
 }
 @media only screen and (min-width: 1200px){
     .Info section{
@@ -258,12 +269,13 @@ main h2{
     }
 
 }
-@media only screen and (min-width: 1200px){
-    main section section div {
-        /*ajustes para pc*/
-        display: inline-block;
-        position: relative;
-    }
+
+.Info section div{
+    padding: 8px 0px;
+}
+
+.Info section div h3{
+    padding: 8px 0px;
 }
 
 main section section div img{
@@ -290,7 +302,7 @@ main section section div p{
     /* tamaño de fuente definido en p*/
 }
 
-/*-END- Politicas y servicio de la empresa*/
+/*-END- Politicas y servicio de la empresa + Marcas con service*/
 
 /*-END- Codigo centrado en index.html */
 
@@ -371,21 +383,47 @@ main section form input{
 /*-START- Pie del sitio (igual en todas las paginas)*/
 
 footer{
+    /*hijo de grid*/
     grid-area: Footer;
-    display: block;
+    /*Padre Flex*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
     position: relative;
     background-color: #77B6EA;
     align-content: center;
 }
 
-footer h2{
-    display: inline;
-    margin: auto;
-    padding: 16px;
+@media only screen and (min-width: 768px){
+    footer{
+        flex-direction: row;
+    }
+    body{
+        grid-template-rows: 90px fit-content(100%) 64px;
+    }
 }
 
-footer h2 img{
-    height: 40px;
-    width: 40px;
+footer h2{
+    display: none;
+}
+
+footer div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+footer div h3{
+    display: inline;
+    font-size: 24px;
+    padding-left: 5px;
+}
+
+footer div img{
+    display: inline;
+    height: 18px;
+    width: 18px;
 }
 /* -END- Pie del sitio (igual en todas las paginas)*/
