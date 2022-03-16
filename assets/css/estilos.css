@@ -101,6 +101,27 @@ header h2{
     max-width: 65px; /*Evita que haga overflow de la celda del grid*/
 }
 
+#Logo svg:hover{
+    /*Lo animo al tener el mouse sobre el SVG*/
+    animation-name: zoom_out;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 3s;
+}
+
+@keyframes zoom_out {
+    /*Pasa de su tamaño normal, a uno chico y vuelve rapido al normal*/
+    /*Pendiente configurar mejor margin para aumentar legibilidad del codigo*/
+    0% {height: 40px;}
+    25% {margin-top: 5px;
+        height: 30px;}
+    50% {margin-top: 10px;
+        height: 20px;}
+    75% {margin-top: 12.5px;
+        height: 15px;}
+    100% {height: 40px;}
+}
+
 header nav{
     grid-area: nav;
     /*position: relative;*/
@@ -143,7 +164,19 @@ header nav ul li a {
 }
 header nav ul li a:hover {
     color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
+    animation-name: flash_background;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    
 }
+
+@keyframes flash_background {
+    /*Cambia gradualmente el fondo a blanco*/
+    100%{ background-color:white;}
+}
+
 header nav ul li a:active {
     color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
 }
