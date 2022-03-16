@@ -165,7 +165,10 @@ header nav ul li a:active {
 main {
     grid-area: Main;
     display: block;
-    background-color: #FFEDE1;
+    /*background-color: #FFEDE1;*/
+    background-color: #f9d29d;
+    background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+
 }
 
 /*-START- Intro al sitio*/
@@ -242,7 +245,8 @@ main h2{
 
 .Info .banner{
     text-align: center;
-    background-image: url("../image/45degreee_fabric.png");
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
     width: 100%;
     grid-area: Banner;
     align-self: baseline;
@@ -329,7 +333,8 @@ sean cambiados por imgs para no depender de terceros */
 .Catalog .banner {
     /*Copy paste de las propiedasdes de .Info .banner*/
     text-align: center;
-    background-image: url("../image/45degreee_fabric.png");
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
     width: 100%;
     grid-area: Banner;
     align-self: baseline;
