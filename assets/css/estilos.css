@@ -79,7 +79,7 @@ header{
 
 @media only screen and (min-width: 1024px) {
     header{
-        /*tablet, desktop*/
+        /*tablet horizontal*/
         grid-template-areas: 
             "home . nav . user";
         grid-template-columns: 1fr 1fr 8fr 1fr 1fr;
@@ -110,14 +110,14 @@ header nav{
 
 @media only screen and (min-width: 600px) {
     header nav{
-        /*small tablet*/
+        /*small tablet vertical*/
         font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 1024px) {
     header nav{
-        /*tablet, desktop*/
+        /*tablet horizontal*/
         font-size: 24px;
     }
 }
@@ -208,18 +208,19 @@ main section div{
 #IntroMedia{
     /* Mobile first*/
     display: block;
-    height: 360px;
-    width: 360px; /*el gif placeholder no tiene ancho igual a alto*/
+    height: 320px;
+    width: 320px; /*el gif placeholder no tiene ancho igual a alto*/
     margin: auto;
     padding: 0px;
     border: 0px;
     margin: 0px;
 }
 
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 480px){
     #IntroMedia{
-        /*ajustes para pc*/
-        display:inline-block;
+        /*Mobile horizontal*/
+        height: 360px;
+        width: 360px; 
     }
 }
 
@@ -299,9 +300,16 @@ main section section div h3{
 
 main section section div p{
     margin: auto;
-    width: 360px;
+    width: 320px;
     text-align: center;
     /* tamaño de fuente definido en p*/
+}
+
+@media only screen and (min-width: 480px){
+    main section section div p{
+        /*Mobile horizontal*/
+        width: 360px; 
+    }
 }
 
 /*-END- Politicas y servicio de la empresa + Marcas con service*/
@@ -441,6 +449,7 @@ footer{
 }
 
 @media only screen and (min-width: 768px){
+    /*10 inch vertical tablet*/
     footer{
         flex-direction: row;
     }
