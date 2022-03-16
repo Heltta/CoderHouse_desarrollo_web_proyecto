@@ -223,7 +223,14 @@ main {
 .Intro .Description .Intro__text{
     display:block;
     text-align: center;
-    max-width: 480px;
+    max-width: 300px;
+}
+
+@media only screen and (min-width: 480px){
+    .Intro .Description .Intro__text{
+        /*Mobile horizontal*/
+        max-width: 360px;
+    }
 }
 
 .Intro .Description .Intro__text--title{
@@ -296,7 +303,13 @@ main h2{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 8px;
+}
+@media only screen and (min-width: 480px){
+    .Info section{
+        /*MobileH*/
+        padding: 8px;
+    }
+
 }
 @media only screen and (min-width: 1200px){
     .Info section{
