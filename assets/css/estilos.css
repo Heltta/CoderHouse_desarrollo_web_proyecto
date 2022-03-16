@@ -12,6 +12,15 @@
     margin-inline-start: 0px;
     margin-inline-end: 0px;
  }
+
+:root {
+    --mobile_V-breakpoint: 320px;
+	--mobile_H-breakpoint: 480px;
+    --Tablet_SV-breakpoint: 600px;
+    --Tablet_MV-breakpoint: 768px;
+    --Tablet_H-breakpoint: 1024px;
+	--Desktop-breakpoint: 1200px;
+}
  
 
 /*Formato por default del texto*/
