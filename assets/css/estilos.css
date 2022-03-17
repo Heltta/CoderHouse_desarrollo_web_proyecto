@@ -21,11 +21,12 @@ body{
         "Header"
         "Main"
         "Footer";
-    grid-template-rows: 90px fit-content(100%) 94px; /*existe un media query que cambia la ultima fila en el footer section*/
+    grid-template-rows: 90px auto 94px; /*existe un media query que cambia la ultima fila en el footer section*/
     font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
     font-weight: normal;
     font-size: 16px;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /*Carga de las fuentes guardades en los assets*/
@@ -315,6 +316,7 @@ main h2{
     .Info section{
         /*desktop*/
         flex-direction: row;
+        flex-wrap: wrap;
     }
 
 }
@@ -500,7 +502,7 @@ footer{
         flex-direction: row;
     }
     body{
-        grid-template-rows: 90px fit-content(100%) 64px;
+        grid-template-rows: 90px auto 64px;
     }
 }
 
