@@ -462,6 +462,19 @@ main section form input{
 
 
 
+/*-START- Codigo centrado en seguros.html*/
+
+section .carousel-item.active img{
+    width: 320px;
+    height:auto;
+    margin:auto;
+}
+
+/*-END- Codigo centrado en seguros.html*/
+
+
+
+
 /*-START- Pie del sitio (igual en todas las paginas)*/
 
 footer{
