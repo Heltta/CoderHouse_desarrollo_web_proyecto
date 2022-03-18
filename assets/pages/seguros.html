@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuFix - Seguros</title>
     
+    <!--bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
     <!--styles sheet-->
     <link rel="stylesheet" href="../css/estilos.css" />
     <!--cargar fuentes desde googlefonts-->
@@ -23,14 +26,21 @@
           </svg>
           
       </a>
-        <nav>
-            <ul>
-                <li><a href="accesorios.html">Accesorios</a></li>
-                <li><a href="mi_pedido.html">Mi pedido</a></li>
-                <li><a href="presupuesto.html">Presupuesto</a></li>
-                <li><a href="seguros.html">Seguros</a></li>
-            </ul>
-        </nav>
+      
+      <nav class="dropdown">
+          <button type="button" class="btn" data-toggle="dropdown">
+              <svg width="61" height="40" viewBox="0 0 61 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.83333 40H57.1667C59 40 60.5 38.5 60.5 36.6667C60.5 34.8333 59 33.3333 57.1667 33.3333H3.83333C2 33.3333 0.5 34.8333 0.5 36.6667C0.5 38.5 2 40 3.83333 40ZM3.83333 23.3333H57.1667C59 23.3333 60.5 21.8333 60.5 20C60.5 18.1667 59 16.6667 57.1667 16.6667H3.83333C2 16.6667 0.5 18.1667 0.5 20C0.5 21.8333 2 23.3333 3.83333 23.3333ZM0.5 3.33333C0.5 5.16667 2 6.66667 3.83333 6.66667H57.1667C59 6.66667 60.5 5.16667 60.5 3.33333C60.5 1.5 59 0 57.1667 0H3.83333C2 0 0.5 1.5 0.5 3.33333Z" fill="#171219"/>
+                  </svg>
+          </button>
+          <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="accesorios.html">Accesorios</a></li>
+              <li><a class="dropdown-item" href="mi_pedido.html">Mi pedido</a></li>
+              <li><a class="dropdown-item" href="presupuesto.html">Presupuesto</a></li>
+              <li><a class="dropdown-item" href="seguros.html">Seguros</a></li>
+          </ul>
+      </nav>
+
         <a id="UserProfile"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 0C8.96 0 0 8.96 0 20C0 31.04 8.96 40 20 40C31.04 40 40 31.04 40 20C40 8.96 31.04 0 20 0ZM20 6C23.32 6 26 8.68 26 12C26 15.32 23.32 18 20 18C16.68 18 14 15.32 14 12C14 8.68 16.68 6 20 6ZM20 34.4C17.6237 34.4 15.2844 33.812 13.1906 32.6883C11.0967 31.5646 9.31355 29.9402 8 27.96C8.06 23.98 16 21.8 20 21.8C23.98 21.8 31.94 23.98 32 27.96C30.6864 29.9402 28.9033 31.5646 26.8094 32.6883C24.7156 33.812 22.3763 34.4 20 34.4Z" fill="black"/>
             </svg>            
@@ -110,5 +120,10 @@
         </div>
     </footer>
     <!--cierre de Pie con información de contacto-->
+    <!--START Codigo javascript de bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--END Codigo javascript de bootstrap-->
 </body>
 </html>

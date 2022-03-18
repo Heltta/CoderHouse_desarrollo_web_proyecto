@@ -63,10 +63,9 @@ header{
     /*grid padre*/
     display: grid;
     grid-template-areas: 
-        "home . . user"
-        "nav nav nav nav";
-    grid-template-columns: repeat(1fr, 4);
-    grid-template-rows: 1fr 1fr;
+        "nav home . . . user";
+    grid-template-columns: repeat(1fr, 6);
+    grid-template-rows: 1fr;
     grid-column-gap: 20px;
     align-items: center;
     justify-items: center;
