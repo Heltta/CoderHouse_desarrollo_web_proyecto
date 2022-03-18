@@ -32,12 +32,17 @@
             
         </a>
 
-        <nav>
-            <ul>
-                <li><a href="assets/pages/accesorios.html">Accesorios</a></li>
-                <li><a href="assets/pages/mi_pedido.html">Mi pedido</a></li>
-                <li><a href="assets/pages/presupuesto.html">Presupuesto</a></li>
-                <li><a href="assets/pages/seguros.html">Seguros</a></li>
+        <nav class="dropdown">
+            <button type="button" class="btn" data-toggle="dropdown">
+                <svg width="61" height="40" viewBox="0 0 61 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.83333 40H57.1667C59 40 60.5 38.5 60.5 36.6667C60.5 34.8333 59 33.3333 57.1667 33.3333H3.83333C2 33.3333 0.5 34.8333 0.5 36.6667C0.5 38.5 2 40 3.83333 40ZM3.83333 23.3333H57.1667C59 23.3333 60.5 21.8333 60.5 20C60.5 18.1667 59 16.6667 57.1667 16.6667H3.83333C2 16.6667 0.5 18.1667 0.5 20C0.5 21.8333 2 23.3333 3.83333 23.3333ZM0.5 3.33333C0.5 5.16667 2 6.66667 3.83333 6.66667H57.1667C59 6.66667 60.5 5.16667 60.5 3.33333C60.5 1.5 59 0 57.1667 0H3.83333C2 0 0.5 1.5 0.5 3.33333Z" fill="#171219"/>
+                    </svg>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="assets/pages/accesorios.html">Accesorios</a></li>
+                <li><a class="dropdown-item" href="assets/pages/mi_pedido.html">Mi pedido</a></li>
+                <li><a class="dropdown-item" href="assets/pages/presupuesto.html">Presupuesto</a></li>
+                <li><a class="dropdown-item" href="assets/pages/seguros.html">Seguros</a></li>
             </ul>
         </nav>
 
@@ -75,7 +80,7 @@
             </div>
 
             <div>
-                <img id="IntroMedia" src="assets/image/eye_catching_xray.gif" alt="Gif de rayos X de un iphone" >
+                <img id="IntroMedia" class="rounded" src="assets/image/eye_catching_xray.gif" alt="Gif de rayos X de un iphone" >
             </div>
         </section>
         <!--cierre de introducción a la empresa-->
@@ -88,7 +93,7 @@
 
             <section>
                 <div>
-                    <img src="assets\image\market_cart.png" alt="carrito de compras" >
+                    <img class="rounded-circle" src="assets\image\market_cart.png" alt="carrito de compras" >
                         <h3>Compra fácil</h3>
                         <p>
                             Lorem ipsum dolor sit amet,
@@ -99,7 +104,7 @@
                 </div>
 
                 <div>
-                    <img src="assets\image\microchip.png" alt="Chip" >
+                    <img class="rounded-circle" src="assets\image\microchip.png" alt="Chip" >
                         <h3>Microsoldadura</h3>
                         <p>
                             Lorem ipsum dolor sit amet,
@@ -110,7 +115,7 @@
                 </div>
 
                 <div>
-                    <img src="assets\image\wrench.png" alt="llave inglesa" >
+                    <img class="rounded-circle" src="assets\image\wrench.png" alt="llave inglesa" >
                         <h3>Arreglos rapidos</h3>
                         <p>
                             Lorem ipsum dolor sit amet,
