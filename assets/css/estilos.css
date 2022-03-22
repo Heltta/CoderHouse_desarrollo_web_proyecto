@@ -406,6 +406,7 @@ sean cambiados por imgs para no depender de terceros */
 
 .Catalog section div h3 {
     width: 90%;
+    height: 2.5em; /*uniformiza el tamaño para los distintos largos de texto*/
 }
 
 main section section div div{
