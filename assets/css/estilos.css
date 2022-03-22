@@ -42,9 +42,6 @@ body{
 
 h1{
     display: none; /*No estoy interesado en que el h1 se vea*/
-    color:blue;
-    font-family: 'Montserrat';
-    overflow-x: visible;
 }
 
 /*Configuracion predeterminada de un parrafo*/
@@ -63,8 +60,8 @@ header{
     /*grid padre*/
     display: grid;
     grid-template-areas: 
-        "nav home . . . user";
-    grid-template-columns: repeat(1fr, 6);
+        "nav home . user";
+    grid-template-columns: 1fr 1fr 7fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
     align-items: center;
@@ -81,8 +78,8 @@ header{
     header{
         /*tablet horizontal*/
         grid-template-areas: 
-            "nav home . user";
-        grid-template-columns: 1fr 1fr 9fr 1fr;
+            "home nav user";
+        grid-template-columns: 1fr 8fr 1fr;
         grid-template-rows: 1fr;
     }
 }
@@ -102,7 +99,8 @@ header h2{
     max-width: 65px; /*Evita que haga overflow de la celda del grid*/
 }
 
-header nav{
+header nav,
+.dropdown-menu .dropdown-item{
     grid-area: nav;
     /*position: relative;*/
     font-size: 16px; /*Este tamaño varía según la pantalla*/
@@ -110,17 +108,11 @@ header nav{
     background-color: inherit;
 }
 
-@media only screen and (min-width: 600px) {
-    header nav{
-        /*small tablet vertical*/
-        font-size: 20px;
-    }
-}
-
 @media only screen and (min-width: 1024px) {
-    header nav{
+    header nav,
+    .dropdown-menu .dropdown-item{
         /*tablet horizontal*/
-        font-size: 24px;
+        font-size: 1.5em;
     }
 }
 
@@ -134,17 +126,39 @@ header nav .dropdown-menu.show{
     background-color: inherit;
 }
 
+header nav:not(.dropdown){
+    display:none;
+}
+
+@media only screen and (min-width: 1024px) {
+    /*tablet horizontal*/
+    header nav.dropdown{
+        display: none;
+    }
+    header nav:not(.dropdown){
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    header nav ul:not(.dropdown-menu){
+        /*Sobreescribo bootstrap margin*/
+        margin-bottom: 0;
+    }
+}
+
 header nav ul li {
    display: inline-block;
    position:relative;
    
 }
-header nav ul li a, header nav ul li .dropdown-item {
+header nav ul li a, 
+header nav ul li .dropdown-item {
     /*Color (y formato) default de un hipervinculo*/
     color: black;
     text-decoration: none;
 }
-header nav ul li a:hover, header nav ul li .dropdown-item:hover {
+header nav ul li a:hover, 
+header nav ul li .dropdown-item:hover {
     color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
     background-color: inherit;
     animation-name: flash_background;
@@ -160,7 +174,8 @@ header nav ul li a:hover, header nav ul li .dropdown-item:hover {
     100%{ background-color:white;}
 }
 
-header nav ul li a:active {
+header nav ul li a:active, 
+header nav ul li .dropdown-item:active {
     color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
 }
 
