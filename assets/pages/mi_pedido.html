@@ -65,33 +65,69 @@
     <main>
         <!--Datos para poder ver estado del pedido-->
         <section class="Data_Formulary">
-            <h2 class="FormHeader">Estime su presupuesto</h2>
+            <h2 class="FormHeader">Ubique su pedido</h2>
             <form action="#" method="post">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellido">
-                <input type="email" placeholder="correo@dominio.com">
-                <input type="number" placeholder="Número del pedido o service">
-                <label class="DropBoxLabel" for="puntación"> Valoracion del servicio:
-                    <select  name="puntación"> 
+
+                <!--START Identificación del pedido-->
+                <div>
+                    <label  for="numGuia" class="form-label">
+                            Número del pedido o service</label>
+                    <input  type="number" class="form-control"
+                            name="numGuia" placeholder="0123456789">
+                </div>
+                <!--END Identificación del pedido-->
+
+                <!--Start Datos personales-->
+                <div class="mb-3">
+                    <div    class="form-text">
+                            Ingrese sus datos
+                    </div>
+                    <input  type="text" class="form-control" 
+                            placeholder="Nombres">
+                    <input  type="text" class="form-control" 
+                            placeholder="Apellidos">
+                    <input  type="email" class="form-control" 
+                            placeholder="correo@dominio.com">
+                    <div    class="form-text text-muted">
+                            Nunca compartiremos sus datos personales con nadie
+                    </div>
+                </div>
+                <!--END Datos personales-->
+
+                <!--START Opinion del cliente-->
+                <div>
+                    <label class="DropBoxLabel form-text" for="puntación"> Valoracion del servicio:</label>
+                    <select class="form-select" name="puntación"> 
+                        <option selected>¡Queremos su opinion!</option>
                         <option value="1">Completamente inconforme</option>
                         <option value="2">Inconforme</option>
                         <option value="3">Medianamente Conforme</option>
                         <option value="4">Conforme</option>
                         <option value="5">Excelente servicio</option>
                     </select>
-                </label>
-                <!--cierre Datos para poder ver estado del pedido-->
-                <!--Sección de información opcional-->
-                <label for="acepta recibir noticias"> ¿Quieres recibir noticias y ofertas?:
-                        <input type="checkbox" name="acepta recibir noticias" value="1">
-                </label>
-                <input type="submit" value="Ver el pedido">
-                <input type="reset" value="Borrar datos">
+                </div>
+                <!--END Opinion del cliente-->
+
+                <!--START Sub al newslater-->
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="acepta recibir noticias">
+                    <label class="form-check-label" for="acepta recibir noticias"> ¿Quieres recibir noticias y ofertas?:</label>
+                </div>
+                <!--END Sub al newslater-->
+                
+                <!--START Botones-->
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Ver el pedido">
+                    <input type="reset" class="btn btn-secondary" value="Borrar datos">
+                </div>
+                <!--END Botones-->
             </form>
         </section>
-        <section Class="FillerContent">
+
+        <section class="FillerContent">
             <img class="img-fluid mx-auto d-block" src="../image/happy-people-using-mobile-smart-phone-men-women-94083621.jpg" alt="Clientes contentos">
         </section>
+
     </main>
     <!--cierre de contenido principal de la pagina-->
     <!--Pie con información de contacto-->
