@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/*Con npm run watch-sass 
+mantengo sincronizados el scss
+con el css*/
+div {
+    font-family: 'Courier New', Courier, monospace;
+    p{
+        color: chocolate;
+        :hover{
+            color: red;
+        }
+        h1{
+            background-color: blue;
+        }
+    }
+}
