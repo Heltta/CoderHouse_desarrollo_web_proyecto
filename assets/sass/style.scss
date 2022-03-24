@@ -72,101 +72,54 @@ header{
     top: 0px;
     z-index: 2;
     background-color: #1E91D6;
-}
-
-@media only screen and (min-width: 1024px) {
-    header{
-        /*tablet horizontal*/
-        grid-template-areas: 
-            "home nav user";
-        grid-template-columns: 1fr 8fr 1fr;
-        grid-template-rows: 1fr;
-    }
-}
-
-header h2{
-    display: none;
-}
-
-#Logo{
-    grid-area: home;
-    height: 40px; 
-}
-
-#Logo svg{
-    height: 40px;
-    width: auto;
-    max-width: 65px; /*Evita que haga overflow de la celda del grid*/
-}
-
-header nav,
-.dropdown-menu .dropdown-item{
-    grid-area: nav;
-    /*position: relative;*/
-    font-size: 16px; /*Este tamaño varía según la pantalla*/
-    width: 100%;
-    background-color: inherit;
-}
-
-@media only screen and (min-width: 1024px) {
-    header nav,
-    .dropdown-menu .dropdown-item{
-        /*tablet horizontal*/
-        font-size: 1.5em;
-    }
-}
-
-header nav ul, 
-header nav .dropdown-menu.show{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    list-style: none;
-    width: inherit;
-    background-color: inherit;
-}
-
-header nav:not(.dropdown){
-    display:none;
-}
-
-@media only screen and (min-width: 1024px) {
-    /*tablet horizontal*/
-    header nav.dropdown{
+    h2{
         display: none;
     }
-    header nav:not(.dropdown){
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+    nav, 
+    .dropdown-menu .dropdown-item{
+        grid-area: nav;
+        /*position: relative;*/
+        font-size: 16px; /*Este tamaño varía según la pantalla*/
+        width: 100%;
+        background-color: inherit;
     }
-    header nav ul:not(.dropdown-menu){
-        /*Sobreescribo bootstrap margin*/
-        margin-bottom: 0;
-    }
-}
+    nav{
+        &:not(.dropdown){
+            display:none;
+        }
+        ul, .dropdown-menu.show{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            list-style: none;
+            width: inherit;
+            background-color: inherit;
+        }
+        ul{
+            li{
+                display: inline-block;
+                position:relative;
 
-header nav ul li {
-   display: inline-block;
-   position:relative;
-   
-}
-header nav ul li a, 
-header nav ul li .dropdown-item {
-    /*Color (y formato) default de un hipervinculo*/
-    color: black;
-    text-decoration: none;
-}
-header nav ul li a:hover, 
-header nav ul li .dropdown-item:hover {
-    color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
-    background-color: inherit;
-    animation-name: flash_background;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 1s;
-    animation-delay: 0.1s;
-    
+                a, .dropdown-item{
+                    /*Color (y formato) default de un hipervinculo*/
+                    color: black;
+                    text-decoration: none;
+                    &:hover{
+                        color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
+                        background-color: inherit;
+                        animation-name: flash_background;
+                        animation-iteration-count: 1;
+                        animation-timing-function: ease-in;
+                        animation-duration: 1s;
+                        animation-delay: 0.1s;
+                    }
+                    &:active{
+                        color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
+                    }
+                }
+            }
+        }
+    }
 }
 
 @keyframes flash_background {
@@ -174,10 +127,45 @@ header nav ul li .dropdown-item:hover {
     100%{ background-color:white;}
 }
 
-header nav ul li a:active, 
-header nav ul li .dropdown-item:active {
-    color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
+@media only screen and (min-width: 1024px) {
+    /*tablet horizontal*/
+    header{
+        grid-template-areas: 
+            "home nav user";
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: 1fr;
+        nav,
+        .dropdown-menu .dropdown-item{
+            /*tablet horizontal*/
+            font-size: 1.5em;
+        }
+        nav{
+            .dropdown{
+                display: none;
+            }
+            &:not(.dropdown){
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+            ul:not(.dropdown-menu){
+                /*Sobreescribo bootstrap margin*/
+                margin-bottom: 0;
+            }
+        }
+    }
 }
+
+#Logo{
+    grid-area: home;
+    height: 40px; 
+    svg{
+        height: 40px;
+        width: auto;
+        max-width: 65px; /*Evita que haga overflow de la celda del grid*/
+        }
+}
+
 
 #UserProfile{
     grid-area: user;
@@ -375,42 +363,44 @@ mismo formato que los h3 de index */
 /* En la entrega final, probablemente estos iframes
 sean cambiados por imgs para no depender de terceros */
 
-.Catalog{
+.Catalog {
     display: grid;
     grid-template-areas: 
                         "Banner"
                         "Articles";
     grid-template-rows: fit-content(100%) fit-content(100%);
-}
-
-.Catalog .banner {
-    /*Copy paste de las propiedasdes de .Info .banner*/
-    text-align: center;
-    background-color: #d9d9d9;
-    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
-    width: 100%;
-    grid-area: Banner;
-    align-self: baseline;
-    padding: 10px 0px;
-    font-size: 36px;
-    border: 0px;
-}
-
-.Catalog section{
-    grid-area: Articles;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.Catalog section div h3 {
-    width: 90%;
-    height: 2.5em; /*uniformiza el tamaño para los distintos largos de texto*/
-}
-
-main section section div div{
-    display:block;
+    .banner {
+        /*Copy paste de las propiedasdes de .Info .banner*/
+        text-align: center;
+        background-color: #d9d9d9;
+        background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+        width: 100%;
+        grid-area: Banner;
+        align-self: baseline;
+        padding: 10px 0px;
+        font-size: 36px;
+        border: 0px;
+    }
+    section {
+        grid-area: Articles;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        div {
+            h3 {
+                width: 90%;
+                height: 2.5em; /*uniformiza el tamaño para los distintos largos de texto*/
+            }
+        }
+        section {
+            div {
+                div {
+                    display:block;
+                }
+            }
+        }
+    }
 }
 
 /*-END- Codigo centrado en accesorios.html*/
