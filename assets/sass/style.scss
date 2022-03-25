@@ -1,8 +1,15 @@
+/*START Variables*/
+$Persian-blue: #1B2CC1;
+$Linen: #FFEDE1; //fuera de uso pero era parte de la paleta original
+$Xiketic: #171219;
+$Aero: #77B6EA;
+$Dark-Cyan: #0F8B8D;
+/* END  Variables*/
 /*-START- Default settings*/
 
 /* CSS reset: ayuda a evitar diferencias visuales entre navegadores*/
 * {
-    Margin:0;
+    margin:0;
     padding:0;
  }
 
@@ -102,10 +109,10 @@ header{
 
                 a, .dropdown-item{
                     /*Color (y formato) default de un hipervinculo*/
-                    color: black;
+                    color: $Xiketic;
                     text-decoration: none;
                     &:hover{
-                        color: darkviolet;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
+                        color: $Dark-Cyan;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
                         background-color: inherit;
                         animation-name: flash_background;
                         animation-iteration-count: 1;
@@ -124,7 +131,7 @@ header{
 
 @keyframes flash_background {
     /*Cambia gradualmente el fondo a blanco*/
-    100%{ background-color:white;}
+    100%{ background-color: white;}
 }
 
 @media only screen and (min-width: 1024px) {
@@ -515,7 +522,7 @@ footer{
     justify-content: space-around;
 
     position: relative;
-    background-color: #77B6EA;
+    background-color: $Aero;
     align-content: center;
 
     h2{

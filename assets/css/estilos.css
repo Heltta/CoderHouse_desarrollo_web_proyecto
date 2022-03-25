@@ -1,8 +1,10 @@
 @charset "UTF-8";
+/*START Variables*/
+/* END  Variables*/
 /*-START- Default settings*/
 /* CSS reset: ayuda a evitar diferencias visuales entre navegadores*/
 * {
-  Margin: 0;
+  margin: 0;
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,10 +85,10 @@ header {
     position: relative; }
     header nav ul li a, header nav ul li .dropdown-item {
       /*Color (y formato) default de un hipervinculo*/
-      color: black;
+      color: #171219;
       text-decoration: none; }
       header nav ul li a:hover, header nav ul li .dropdown-item:hover {
-        color: darkviolet;
+        color: #0F8B8D;
         /*Color de los hipervinculos al pasar el puntero sobre ellos*/
         background-color: inherit;
         animation-name: flash_background;
