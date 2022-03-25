@@ -342,9 +342,8 @@ main section form {
 /*-START- Codigo centrado en prespuesto.html*/
 .FormPresupuesto {
   display: block; }
-
-.FormPresupuesto label {
-  display: block; }
+  .FormPresupuesto label {
+    display: block; }
 
 /*-END- Codigo centrado en prespuesto.html*/
 /*-START- Codigo centrado en seguros.html*/
@@ -366,6 +365,20 @@ footer {
   position: relative;
   background-color: #77B6EA;
   align-content: center; }
+  footer h2 {
+    display: none; }
+  footer div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    footer div h3 {
+      display: inline;
+      font-size: 24px;
+      padding-left: 5px; }
+    footer div img {
+      display: inline;
+      height: 18px;
+      width: 18px; }
 
 @media only screen and (min-width: 768px) {
   /*10 inch vertical tablet*/
@@ -373,23 +386,5 @@ footer {
     flex-direction: row; }
   body {
     grid-template-rows: 90px auto 64px; } }
-
-footer h2 {
-  display: none; }
-
-footer div {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-
-footer div h3 {
-  display: inline;
-  font-size: 24px;
-  padding-left: 5px; }
-
-footer div img {
-  display: inline;
-  height: 18px;
-  width: 18px; }
 
 /* -END- Pie del sitio (igual en todas las paginas)*/
