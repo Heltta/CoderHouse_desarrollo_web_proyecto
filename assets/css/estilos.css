@@ -113,7 +113,7 @@ header {
     header .dropdown-menu .dropdown-item {
       /*tablet horizontal*/
       font-size: 1.5em; }
-    header nav .dropdown {
+    header nav.dropdown {
       display: none; }
     header nav:not(.dropdown) {
       display: flex;
