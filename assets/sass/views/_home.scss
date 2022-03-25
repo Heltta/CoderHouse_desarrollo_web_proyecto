@@ -1,0 +1,168 @@
+/*-START- Codigo centrado en index.html */
+
+main {
+    grid-area: Main;
+    display: block;
+    /*background-color: #FFEDE1;*/
+    background-color: #f9d29d;
+    background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+
+    section div{
+        display: inline;
+        padding: 8px 0px;
+    }
+}
+
+/*-START- Intro al sitio*/
+
+.Intro{
+    /* Mobile first*/
+    display:flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    .Description {
+        .Intro__text{
+            display:block;
+            text-align: center;
+            max-width: 300px;
+        }
+        .Intro__text--title{
+            font-size: 36px;
+            border: 0px;
+            padding: 8px 0px;
+            margin: auto;
+        }
+    }
+}
+
+#IntroMedia{
+    /* Mobile first*/
+    display: block;
+    height: 320px;
+    width: 320px; /*el gif placeholder no tiene ancho igual a alto*/
+    margin: auto;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+@media only screen and (min-width: 480px){
+    .Intro .Description .Intro__text{
+        /*Mobile horizontal*/
+        max-width: 360px;
+    }
+    #IntroMedia{
+        /*Mobile horizontal*/
+        height: 360px;
+        width: 360px; 
+    }
+}
+@media only screen and (min-width: 768px){
+    .Intro{
+        /*10 inch vertical tablet*/
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+
+/*-END- Intro al sitio*/
+
+
+
+/*-START- Politicas y servicio de la empresa + Marcas con service*/
+
+main {
+    h2{
+        font-size: 36px;
+        border: 0px;
+    }
+    section{
+        section {
+            div {
+                img{
+                    display: block;
+                    height: 170px;
+                    width: 170px;
+                    margin: auto;
+                    position: relative;
+                    border: 3px dotted #C4C4C4;
+                    padding: 10px;
+                    
+                }
+                h3{
+                    font-size: 20px;
+                    margin: auto;
+                    width: 50%;
+                    text-align: center;
+                }
+                p{
+                    margin: auto;
+                    width: 320px;
+                    text-align: center;
+                    /* tamaño de fuente definido en p*/
+                }
+            }
+        }
+
+    }
+} 
+
+.Info{
+    display: grid;
+    grid-template-areas:
+        "Banner"
+        "Bulk";
+    grid-template-rows: 64px fit-content(100%);
+    align-items: stretch;
+    .banner{
+        text-align: center;
+        background-color: #d9d9d9;
+        background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+        width: 100%;
+        grid-area: Banner;
+        align-self: baseline;
+        padding: 10px 0px;
+        font-size: 36px;
+        border: 0px;
+    }
+    section {
+        /*Hijo de grid*/
+        grid-area: Bulk;
+        /*Padre Flex*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        div{
+            padding: 8px 0px;
+            h3{
+                padding: 8px 0px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 480px){
+    .Info section{
+        /*MobileH*/
+        padding: 8px;
+    }
+    main section section div p{
+        /*Mobile horizontal*/
+        width: 360px; 
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .Info section{
+        /*desktop*/
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}
+
+/*-END- Politicas y servicio de la empresa + Marcas con service*/
+
+/*-END- Codigo centrado en index.html */

@@ -1,0 +1,62 @@
+/*-START- Codigo centrado en mi_pedido.html*/
+.Data_Formulary{
+    display: grid;
+    grid-template-areas: 
+                        "Title"
+                        "Data";
+    grid-template-rows: fit-content(100%) fit-content(100%);
+    justify-content: center;
+}
+.FormHeader{
+    font-size: 24px;
+    text-align: center;
+    grid-area: Title;
+    margin: 0.5rem 0;
+}
+main{
+    section{
+        form{
+            display: block;
+            grid-area: Data;
+            input{
+                display:block;
+            }
+            
+        }
+    }
+}
+
+.DropBoxLabel{
+    display:block;
+    select{
+        display: block;
+    }
+}
+
+.CheckBoxLabel {
+    display: inline;
+}
+
+.Data_Formulary {
+    form {
+        .text-muted{
+            font-size: 12px;
+            padding-top: 0;
+        }
+    }
+} 
+
+.FillerContent{
+    margin: 1rem 0;
+    display: none;
+}
+
+@media only screen and (min-width: 768px){
+    /*10 inch vertical tablet*/
+    .FillerContent{
+        display: block
+    }
+}
+
+
+/*-END- Codigo centrado en mi_pedido.html*/

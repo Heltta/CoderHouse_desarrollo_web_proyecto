@@ -1,0 +1,52 @@
+/*-START- Codigo centrado en accesorios.html */
+
+/*Los h2 que separan las secciones de las marcas 
+ya estan formateados en la sección de index  */
+
+/* Los h3 (los nombres del producto) llevan el
+mismo formato que los h3 de index */
+
+/* En la entrega final, probablemente estos iframes
+sean cambiados por imgs para no depender de terceros */
+
+.Catalog {
+    display: grid;
+    grid-template-areas: 
+                        "Banner"
+                        "Articles";
+    grid-template-rows: fit-content(100%) fit-content(100%);
+    .banner {
+        /*Copy paste de las propiedasdes de .Info .banner*/
+        text-align: center;
+        background-color: #d9d9d9;
+        background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+        width: 100%;
+        grid-area: Banner;
+        align-self: baseline;
+        padding: 10px 0px;
+        font-size: 36px;
+        border: 0px;
+    }
+    section {
+        grid-area: Articles;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        div {
+            h3 {
+                width: 90%;
+                height: 2.5em; /*uniformiza el tamaño para los distintos largos de texto*/
+            }
+        }
+        section {
+            div {
+                div {
+                    display:block;
+                }
+            }
+        }
+    }
+}
+
+/*-END- Codigo centrado en accesorios.html*/

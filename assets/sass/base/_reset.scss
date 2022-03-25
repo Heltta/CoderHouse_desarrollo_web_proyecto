@@ -11,3 +11,41 @@
     margin-inline-start: 0;
     margin-inline-end: 0;
  }
+
+ /*-START- Default settings*/
+
+/*Formato por default del texto*/
+body{
+   display: grid;
+   grid-template-areas:
+       "Header"
+       "Main"
+       "Footer";
+   grid-template-rows: 90px auto 94px; /*existe un media query que cambia la ultima fila en el footer section*/
+   font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist' ;
+   font-weight: normal;
+   font-size: 16px;
+   overflow-x: hidden;
+   min-height: 100vh;
+}
+@media only screen and (min-width: 768px){
+   /*10 inch vertical tablet*/
+   /*relevante para el footer*/
+   body{
+       grid-template-rows: 90px auto 64px;
+   }
+}
+
+
+
+h1{
+   display: none; /*No estoy interesado en que el h1 se vea*/
+}
+
+/*Configuracion predeterminada de un parrafo*/
+p {
+   line-height: 16px;
+   font-size: 14px;
+}
+
+/*-END- Default settings*/
