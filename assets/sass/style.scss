@@ -422,31 +422,38 @@ sean cambiados por imgs para no depender de terceros */
     grid-area: Title;
     margin: 0.5rem 0;
 }
-
-main section form{
-    display: block;
-    grid-area: Data;
-}
-main section form input{
-    display:block;
+main{
+    section{
+        form{
+            display: block;
+            grid-area: Data;
+            input{
+                display:block;
+            }
+            
+        }
+    }
 }
 
 .DropBoxLabel{
     display:block;
-}
-
-.DropBoxLabel select{
-    display: block;
+    select{
+        display: block;
+    }
 }
 
 .CheckBoxLabel {
     display: inline;
 }
 
-.Data_Formulary form .text-muted{
-    font-size: 12px;
-    padding-top: 0;
-}
+.Data_Formulary {
+    form {
+        .text-muted{
+            font-size: 12px;
+            padding-top: 0;
+        }
+    }
+} 
 
 .FillerContent{
     margin: 1rem 0;

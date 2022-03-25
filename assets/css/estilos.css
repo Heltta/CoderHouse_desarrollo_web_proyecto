@@ -314,15 +314,13 @@ sean cambiados por imgs para no depender de terceros */
 main section form {
   display: block;
   grid-area: Data; }
-
-main section form input {
-  display: block; }
+  main section form input {
+    display: block; }
 
 .DropBoxLabel {
   display: block; }
-
-.DropBoxLabel select {
-  display: block; }
+  .DropBoxLabel select {
+    display: block; }
 
 .CheckBoxLabel {
   display: inline; }
