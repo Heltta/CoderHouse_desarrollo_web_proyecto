@@ -1,5 +1,8 @@
-@import 'utilities/variables';
-@import 'base/reset';
+@import "base/reset";
+@import "base/typo";
+@import "utilities/variables";
+@import "layout/header";
+@import "layout/footer";
 
 /*-START- Default settings*/
 
@@ -17,16 +20,14 @@ body{
     overflow-x: hidden;
     min-height: 100vh;
 }
+@media only screen and (min-width: 768px){
+    /*10 inch vertical tablet*/
+    /*relevante para el footer*/
+    body{
+        grid-template-rows: 90px auto 64px;
+    }
+}
 
-/*Carga de las fuentes guardades en los assets*/
-@font-face {
-	font-family: 'Metropolis';
-	src: url('../font/Metropolis/Metropolis-Regular.ttf');
-}
-@font-face {
-	font-family: 'Montserrat';
-	src: url('../font/Montserrat/Montserrat-Regular.ttf');
-}
 
 
 h1{
@@ -41,129 +42,6 @@ p {
 
 /*-END- Default settings*/
 
-
-/*-START- Seccion de barra de navegación (y encabezado)*/
-
-header{
-    grid-area: Header; /* es hijo de un grid */
-    /*grid padre*/
-    display: grid;
-    grid-template-areas: 
-        "nav home . user";
-    grid-template-columns: 1fr 1fr 7fr 1fr;
-    grid-template-rows: 1fr;
-    grid-column-gap: 20px;
-    align-items: center;
-    justify-items: center;
-
-    /*El header queda siempre arriba en la pantalla mientras scrolleamos*/
-    position: sticky;
-    top: 0px;
-    z-index: 2;
-    background-color: #1E91D6;
-    h2{
-        display: none;
-    }
-    nav, 
-    .dropdown-menu .dropdown-item{
-        grid-area: nav;
-        /*position: relative;*/
-        font-size: 16px; /*Este tamaño varía según la pantalla*/
-        width: 100%;
-        background-color: inherit;
-    }
-    nav{
-        &:not(.dropdown){
-            display:none;
-        }
-        ul, .dropdown-menu.show{
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            list-style: none;
-            width: inherit;
-            background-color: inherit;
-        }
-        ul{
-            li{
-                display: inline-block;
-                position:relative;
-
-                a, .dropdown-item{
-                    /*Color (y formato) default de un hipervinculo*/
-                    color: $Xiketic;
-                    text-decoration: none;
-                    &:hover{
-                        color: $Dark-Cyan;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
-                        background-color: inherit;
-                        animation-name: flash_background;
-                        animation-iteration-count: 1;
-                        animation-timing-function: ease-in;
-                        animation-duration: 1s;
-                        animation-delay: 0.1s;
-                    }
-                    &:active{
-                        color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
-                    }
-                }
-            }
-        }
-    }
-}
-
-@keyframes flash_background {
-    /*Cambia gradualmente el fondo a blanco*/
-    100%{ background-color: white;}
-}
-
-@media only screen and (min-width: 1024px) {
-    /*tablet horizontal*/
-    header{
-        grid-template-areas: 
-            "home nav user";
-        grid-template-columns: 1fr 8fr 1fr;
-        grid-template-rows: 1fr;
-        nav,
-        .dropdown-menu .dropdown-item{
-            /*tablet horizontal*/
-            font-size: 1.5em;
-        }
-        nav{
-            &.dropdown{
-                display: none;
-            }
-            &:not(.dropdown){
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-            }
-            ul:not(.dropdown-menu){
-                /*Sobreescribo bootstrap margin*/
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
-#Logo{
-    grid-area: home;
-    height: 40px; 
-    svg{
-        height: 40px;
-        width: auto;
-        max-width: 65px; /*Evita que haga overflow de la celda del grid*/
-        }
-}
-
-
-#UserProfile{
-    grid-area: user;
-    height: 40px;
-    width: auto;
-    max-width: 65px;
-}
-    
-/*-END- Seccion de barra de navegación (y encabezado)*/
 
 
 
@@ -492,52 +370,4 @@ section{
 
 
 
-/*-START- Pie del sitio (igual en todas las paginas)*/
 
-footer{
-    /*hijo de grid*/
-    grid-area: Footer;
-    /*Padre Flex*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-
-    position: relative;
-    background-color: $Aero;
-    align-content: center;
-
-    h2{
-        display: none;
-    }
-
-    div{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        h3{
-            display: inline;
-            font-size: 24px;
-            padding-left: 5px;
-
-        }
-        img{
-            display: inline;
-            height: 18px;
-            width: 18px;
-
-        }
-    }
-}
-
-@media only screen and (min-width: 768px){
-    /*10 inch vertical tablet*/
-    footer{
-        flex-direction: row;
-    }
-    body{
-        grid-template-rows: 90px auto 64px;
-    }
-}
-/* -END- Pie del sitio (igual en todas las paginas)*/

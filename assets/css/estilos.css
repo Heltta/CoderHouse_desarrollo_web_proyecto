@@ -1,6 +1,4 @@
 @charset "UTF-8";
-/*START Variables*/
-/* END  Variables*/
 /*CSS reset: ayuda a evitar diferencias visuales entre navegadores*/
 * {
   margin: 0;
@@ -12,19 +10,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-inline-start: 0;
   margin-inline-end: 0; }
 
-/*-START- Default settings*/
-/*Formato por default del texto*/
-body {
-  display: grid;
-  grid-template-areas: "Header" "Main" "Footer";
-  grid-template-rows: 90px auto 94px;
-  /*existe un media query que cambia la ultima fila en el footer section*/
-  font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist';
-  font-weight: normal;
-  font-size: 16px;
-  overflow-x: hidden;
-  min-height: 100vh; }
-
 /*Carga de las fuentes guardades en los assets*/
 @font-face {
   font-family: 'Metropolis';
@@ -34,16 +19,8 @@ body {
   font-family: 'Montserrat';
   src: url("../font/Montserrat/Montserrat-Regular.ttf"); }
 
-h1 {
-  display: none;
-  /*No estoy interesado en que el h1 se vea*/ }
-
-/*Configuracion predeterminada de un parrafo*/
-p {
-  line-height: 16px;
-  font-size: 14px; }
-
-/*-END- Default settings*/
+/*START Colors*/
+/* END  Colors*/
 /*-START- Seccion de barra de navegación (y encabezado)*/
 header {
   grid-area: Header;
@@ -141,6 +118,68 @@ header {
   max-width: 65px; }
 
 /*-END- Seccion de barra de navegación (y encabezado)*/
+/*-START- Pie del sitio (igual en todas las paginas)*/
+footer {
+  /*hijo de grid*/
+  grid-area: Footer;
+  /*Padre Flex*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background-color: #77B6EA;
+  align-content: center; }
+  footer h2 {
+    display: none; }
+  footer div {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    footer div h3 {
+      display: inline;
+      font-size: 24px;
+      padding-left: 5px; }
+    footer div img {
+      display: inline;
+      height: 18px;
+      width: 18px; }
+
+@media only screen and (min-width: 768px) {
+  /*10 inch vertical tablet*/
+  footer {
+    flex-direction: row; } }
+
+/* -END- Pie del sitio (igual en todas las paginas)*/
+/*-START- Default settings*/
+/*Formato por default del texto*/
+body {
+  display: grid;
+  grid-template-areas: "Header" "Main" "Footer";
+  grid-template-rows: 90px auto 94px;
+  /*existe un media query que cambia la ultima fila en el footer section*/
+  font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist';
+  font-weight: normal;
+  font-size: 16px;
+  overflow-x: hidden;
+  min-height: 100vh; }
+
+@media only screen and (min-width: 768px) {
+  /*10 inch vertical tablet*/
+  /*relevante para el footer*/
+  body {
+    grid-template-rows: 90px auto 64px; } }
+
+h1 {
+  display: none;
+  /*No estoy interesado en que el h1 se vea*/ }
+
+/*Configuracion predeterminada de un parrafo*/
+p {
+  line-height: 16px;
+  font-size: 14px; }
+
+/*-END- Default settings*/
 /*-START- Codigo centrado en index.html */
 main {
   grid-area: Main;
@@ -355,38 +394,3 @@ section .carousel-item.active img {
   margin: auto; }
 
 /*-END- Codigo centrado en seguros.html*/
-/*-START- Pie del sitio (igual en todas las paginas)*/
-footer {
-  /*hijo de grid*/
-  grid-area: Footer;
-  /*Padre Flex*/
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
-  background-color: #77B6EA;
-  align-content: center; }
-  footer h2 {
-    display: none; }
-  footer div {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-    footer div h3 {
-      display: inline;
-      font-size: 24px;
-      padding-left: 5px; }
-    footer div img {
-      display: inline;
-      height: 18px;
-      width: 18px; }
-
-@media only screen and (min-width: 768px) {
-  /*10 inch vertical tablet*/
-  footer {
-    flex-direction: row; }
-  body {
-    grid-template-rows: 90px auto 64px; } }
-
-/* -END- Pie del sitio (igual en todas las paginas)*/
