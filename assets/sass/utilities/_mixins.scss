@@ -1,0 +1,18 @@
+@mixin cuadrilatero($ancho,$largo){
+    height: $ancho;
+    width: $largo;
+
+}
+@mixin cuadrado($lado){
+    @include cuadrilatero($lado,$lado);
+}
+
+@mixin gradiente-salmon{
+    background-color: #f9d29d;
+    background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+}
+
+@mixin gradiente-gris{
+    background-color: #d9d9d9;
+    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+}

@@ -151,7 +151,6 @@ header {
 main {
   grid-area: Main;
   display: block;
-  /*background-color: #FFEDE1;*/
   background-color: #f9d29d;
   background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%); }
   main section div {
@@ -177,10 +176,9 @@ main {
 #IntroMedia {
   /* Mobile first*/
   display: block;
+  /*el gif placeholder no tiene ancho igual a alto*/
   height: 320px;
   width: 320px;
-  /*el gif placeholder no tiene ancho igual a alto*/
-  margin: auto;
   padding: 0px;
   border: 0px;
   margin: 0px; }

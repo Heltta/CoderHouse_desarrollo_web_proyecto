@@ -18,8 +18,7 @@ sean cambiados por imgs para no depender de terceros */
     .banner {
         /*Copy paste de las propiedasdes de .Info .banner*/
         text-align: center;
-        background-color: #d9d9d9;
-        background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+        @include gradiente-gris;
         width: 100%;
         grid-area: Banner;
         align-self: baseline;
