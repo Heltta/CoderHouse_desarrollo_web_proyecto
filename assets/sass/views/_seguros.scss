@@ -3,12 +3,15 @@
 
 /*-START- Codigo centrado en seguros.html*/
 section{
-    .carousel-item.active {
-        img{
-            width: 320px;
-            height:auto;
-            margin:auto;
+    .carousel.slide{
+        .carousel-item {
+            img{
+                width: 320px;
+                height: 180px;;
+                margin:auto;
+            }
         }
+
     }
 }
 
