@@ -354,9 +354,9 @@ main section form {
 
 /*-END- Codigo centrado en prespuesto.html*/
 /*-START- Codigo centrado en seguros.html*/
-section .carousel-item.active img {
+section .carousel.slide .carousel-item img {
   width: 320px;
-  height: auto;
+  height: 180px;
   margin: auto; }
 
 /*-END- Codigo centrado en seguros.html*/
