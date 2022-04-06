@@ -3,6 +3,16 @@
 
 /*-START- Codigo centrado en seguros.html*/
 section{
+    table.table{
+        thead{
+            background-color: $Persian-blue;
+            color: $Dark-Cyan
+        }
+        tbody{
+            background-color: $Linen;
+
+        }
+    }
     .carousel.slide{
         .carousel-item {
             img{

@@ -356,6 +356,13 @@ main section form {
 
 /*-END- Codigo centrado en prespuesto.html*/
 /*-START- Codigo centrado en seguros.html*/
+section table.table thead {
+  background-color: #1B2CC1;
+  color: #0F8B8D; }
+
+section table.table tbody {
+  background-color: #FFEDE1; }
+
 section .carousel.slide .carousel-item img {
   width: 320px;
   height: 180px;
