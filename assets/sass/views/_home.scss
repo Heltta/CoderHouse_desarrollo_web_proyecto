@@ -38,6 +38,7 @@ main {
     display: block;
     /*el gif placeholder no tiene ancho igual a alto*/
     @include cuadrado(320px);
+    border-radius: 1rem;
     padding: 0px;
     border: 0px;
     margin: 0px;
@@ -81,7 +82,7 @@ main {
                     @include cuadrado(170px);
                     margin: auto;
                     position: relative;
-                    border: 3px dotted #C4C4C4;
+                    border: 3px;
                     padding: 10px;
                     
                 }

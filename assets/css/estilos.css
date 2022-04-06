@@ -179,6 +179,7 @@ main {
   /*el gif placeholder no tiene ancho igual a alto*/
   height: 320px;
   width: 320px;
+  border-radius: 1rem;
   padding: 0px;
   border: 0px;
   margin: 0px; }
@@ -210,7 +211,7 @@ main section section div img {
   width: 170px;
   margin: auto;
   position: relative;
-  border: 3px dotted #C4C4C4;
+  border: 3px;
   padding: 10px; }
 
 main section section div h3 {
