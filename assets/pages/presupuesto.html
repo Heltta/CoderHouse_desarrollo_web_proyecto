@@ -74,11 +74,14 @@
                     <select  name="phone_brand">
                         <option value="brand_00">No sabe</option>
                         <option value="brand_01">Apple</option>
-                        <option value="brand_02">Xiaomi</option>
+                        <option value="brand_03">Xiaomi</option>
+                        <option value="brand_04">Samsung</option>
+                        <option value="brand_05">LG</option>
                     </select>
                 </label>
                 <label for="phone_model"> Modelo:
                     <select  name="phone_model">
+                        <!--Al aprender javascript lo configuraré para que solo salten las relevantes-->
                         <option value="brand_00_model_00">No sabe</option>
                         <option value="brand_01_model_00">No sabe</option>
                         <option value="brand_01_model_01">iphone 10</option>
@@ -86,6 +89,9 @@
                         <option value="brand_02_model_00">No sabe</option>
                         <option value="brand_02_model_01">Redmi 9</option>
                         <option value="brand_02_model_02">Remi note 9</option>
+                        <option value="brand_03_model_00">No sabe</option>
+                        <option value="brand_03_model_01">Galaxy A13</option>
+                        <option value="brand_03_model_02">Galaxy tab s8</option>
                     </select>
                 </label>
             
@@ -94,24 +100,27 @@
                         <option value="damage_00">No sabe</option>
                         <option value="damage_01">Pantalla rota</option>
                         <option value="damage_02">Sin señal</option>
+                        <option value="damage_03">Microfono no responde</option>
+                        <option value="damage_04">Parlantes sin audio</option>
                     </select>
                 </label>
                 <!--Datos para el envío-->
                 <label for="departamento del domicilio"> Problema:
                     <select  name="departamento del domicilio">
-                        <option value="departamento">Montevideo</option>
-                        <option value="departamento">Canelones</option>
-                        <option value="departamento">Maldonado</option>
-                        <option value="departamento">Resto del interior</option>
+                        <option value="departamento_00">Montevideo</option>
+                        <option value="departamento_01">Canelones</option>
+                        <option value="departamento_02">Maldonado</option>
+                        <option value="departamento_03">Resto del interior</option>
                     </select>
                 </label>
                 <label for="barrio del domicilio"> Barrio:
                     <select  name="barrio del domicilio">
-                        <option value="barrio">No aplica</option>
-                        <option value="barrio">Cordón</option>
-                        <option value="barrio">Pocitos</option>
-                        <option value="barrio">Centro</option>
-                        <option value="barrio">Pta. Carretas</option>
+                        <option value="barrio_00">No aplica</option>
+                        <option value="barrio_01">Cordón</option>
+                        <option value="barrio_02">Pocitos</option>
+                        <option value="barrio_03">Centro</option>
+                        <option value="barrio_04">Pta. Carretas</option>
+                        <option value="barrio_05">Otro</option>
                     </select>
                 </label>
                 <!--cierre Datos para el envío-->
@@ -120,6 +129,11 @@
                 <input type="submit" value="Estimar presupuesto">
                 <input type="reset" value="Borrar datos">
             </form>
+        </section>
+
+        <!--imagen motivante para hacer uso de los servicios-->
+        <section class="FillerContent">
+            <img class="img-fluid mx-auto d-block rounded" src="../image/person_doing_math.jpg" alt="Clientes contentos">
         </section>
     </main>
     <!--cierre de contenido principal de la pagina-->
