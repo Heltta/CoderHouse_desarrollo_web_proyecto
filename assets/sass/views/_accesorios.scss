@@ -38,13 +38,13 @@ sean cambiados por imgs para no depender de terceros */
                 height: 2.5em; /*uniformiza el tamaño para los distintos largos de texto*/
             }
         }
-        section {
-            div {
-                div {
-                    display:block;
-                }
+        div {
+            display:block;
+            img{
+                border-radius: 1.25rem;
             }
         }
+        
     }
 }
 

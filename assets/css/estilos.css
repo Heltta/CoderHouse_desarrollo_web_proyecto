@@ -301,8 +301,10 @@ sean cambiados por imgs para no depender de terceros */
       width: 90%;
       height: 2.5em;
       /*uniformiza el tamaño para los distintos largos de texto*/ }
-    .Catalog section section div div {
+    .Catalog section div {
       display: block; }
+      .Catalog section div img {
+        border-radius: 1.25rem; }
 
 /*-END- Codigo centrado en accesorios.html*/
 /*-START- Codigo centrado en mi_pedido.html*/
