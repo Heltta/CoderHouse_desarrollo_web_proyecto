@@ -66,7 +66,9 @@ header {
   position: sticky;
   top: 0px;
   z-index: 2;
-  background-color: #1E91D6; }
+  background-color: #00ACB4;
+  background-image: linear-gradient(270.22deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  mix-blend-mode: normal; }
   header h2 {
     display: none; }
   header nav,
@@ -151,8 +153,8 @@ header {
 main {
   grid-area: Main;
   display: block;
-  background-color: #f9d29d;
-  background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%); }
+  background-color: #DCE9E9;
+  background-image: radial-gradient(50% 49.96% at 50% 50.04%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%); }
   main section div {
     display: inline;
     padding: 8px 0px; }
@@ -233,8 +235,8 @@ main section section div p {
   align-items: stretch; }
   .Info .banner {
     text-align: center;
-    background-color: #d9d9d9;
-    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+    background-color: #00ACB4;
+    background-image: linear-gradient(135.1deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 78, 82, 0.04) 100%);
     width: 100%;
     grid-area: Banner;
     align-self: baseline;
@@ -283,8 +285,8 @@ sean cambiados por imgs para no depender de terceros */
   .Catalog .banner {
     /*Copy paste de las propiedasdes de .Info .banner*/
     text-align: center;
-    background-color: #d9d9d9;
-    background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
+    background-color: #00ACB4;
+    background-image: linear-gradient(135.1deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 78, 82, 0.04) 100%);
     width: 100%;
     grid-area: Banner;
     align-self: baseline;
@@ -379,7 +381,9 @@ footer {
   align-items: center;
   justify-content: space-around;
   position: relative;
-  background-color: #77B6EA;
+  background-color: #00ACB4;
+  background-image: linear-gradient(270.22deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  mix-blend-mode: normal;
   align-content: center; }
   footer h2 {
     display: none; }

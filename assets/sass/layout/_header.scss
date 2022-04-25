@@ -16,7 +16,7 @@ header{
     position: sticky;
     top: 0px;
     z-index: 2;
-    background-color: map-get($fondos, header );
+    @include header__background;
     h2{
         display: none;
     }

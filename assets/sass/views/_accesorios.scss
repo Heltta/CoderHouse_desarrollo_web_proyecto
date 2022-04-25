@@ -18,7 +18,7 @@ sean cambiados por imgs para no depender de terceros */
     .banner {
         /*Copy paste de las propiedasdes de .Info .banner*/
         text-align: center;
-        @include gradiente-gris;
+        @include banner__background;
         width: 100%;
         grid-area: Banner;
         align-self: baseline;

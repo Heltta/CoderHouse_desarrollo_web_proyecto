@@ -10,7 +10,7 @@ footer{
     justify-content: space-around;
 
     position: relative;
-    background-color: map-get($fondos, footer );
+    @include header__background;
     align-content: center;
 
     h2{

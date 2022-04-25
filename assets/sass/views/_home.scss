@@ -3,7 +3,7 @@
 main {
     grid-area: Main;
     display: block;
-    @include gradiente-salmon;
+    @include content__background;
     section div{
         display: inline;
         padding: 8px 0px;
@@ -113,7 +113,7 @@ main {
     align-items: stretch;
     .banner{
         text-align: center;
-        @include gradiente-gris;
+        @include banner__background;
         width: 100%;
         grid-area: Banner;
         align-self: baseline;
