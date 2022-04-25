@@ -16,3 +16,25 @@
     background-color: #d9d9d9;
     background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%);
 }
+
+@mixin header__background{
+    background-color: #00ACB4;
+    background-image: linear-gradient(270.22deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: normal;
+}
+
+@mixin content__background{
+    background-color: #DCE9E9;
+    background-image: radial-gradient(50% 49.96% at 50% 50.04%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@mixin banner__background{
+    background-color: #00ACB4;
+    background-image: linear-gradient(135.1deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 78, 82, 0.04) 100%);
+}
+
+@mixin footer__background{
+    background-color: #00ACB4;
+    background-image: linear-gradient(270.22deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    mix-blend-mode: normal;
+}
