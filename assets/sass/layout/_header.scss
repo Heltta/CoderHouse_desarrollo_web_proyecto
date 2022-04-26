@@ -26,7 +26,7 @@ header{
         /*position: relative;*/
         font-size: 16px; /*Este tamaño varía según la pantalla*/
         width: 100%;
-        background-color: inherit;
+        background-color: none;
     }
     nav{
         &:not(.dropdown){
@@ -48,15 +48,26 @@ header{
                 a, .dropdown-item{
                     /*Color (y formato) default de un hipervinculo*/
                     color: $Xiketic;
+                    
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 42px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
                     text-decoration: none;
                     &:hover{
-                        color: $Dark-Cyan;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
+                        color: $Xiketic;  /*Color de los hipervinculos al pasar el puntero sobre ellos*/
                         background-color: inherit;
                         animation-name: flash_background;
                         animation-iteration-count: 1;
                         animation-timing-function: ease-in;
                         animation-duration: 1s;
                         animation-delay: 0.1s;
+                        border-radius: 10px;
                     }
                     &:active{
                         color: white;  /*Color de los hipervinculos hacer click sobre ellos*/
@@ -69,7 +80,26 @@ header{
 
 @keyframes flash_background {
     /*Cambia gradualmente el fondo a blanco*/
-    100%{ background-color: white;}
+    100%{ 
+        opacity:0.3;
+        background-color: white;
+    }
+}
+
+#Logo{
+    grid-area: home;
+    //height: 40px; 
+    svg{
+        //height: 40px;
+        //width: auto;
+        //max-width: 65px; /*Evita que haga overflow de la celda del grid*/
+        &.mobile{
+            display: block;
+        }
+        &.desktop{
+            display: none;
+        }
+        }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -79,6 +109,16 @@ header{
             "home nav user";
         grid-template-columns: 1fr 8fr 1fr;
         grid-template-rows: 1fr;
+        #Logo{
+            svg{
+                &.mobile{
+                    display: none;
+                }
+                &.desktop{
+                    display: block;
+                }
+            }
+        }
         nav,
         .dropdown-menu .dropdown-item{
             /*tablet horizontal*/
@@ -101,22 +141,16 @@ header{
     }
 }
 
-#Logo{
-    grid-area: home;
-    height: 40px; 
-    svg{
-        height: 40px;
-        width: auto;
-        max-width: 65px; /*Evita que haga overflow de la celda del grid*/
-        }
-}
-
 
 #UserProfile{
     grid-area: user;
-    height: 40px;
-    width: auto;
-    max-width: 65px;
+    height: 90px;
+    width: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
 }
     
 /*-END- Seccion de barra de navegación (y encabezado)*/
