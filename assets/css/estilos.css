@@ -377,9 +377,10 @@ footer {
   grid-area: Footer;
   /*Padre Flex*/
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-around;
+  padding: 0px;
   position: relative;
   background-color: #00ACB4;
   background-image: linear-gradient(270.22deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
@@ -389,20 +390,46 @@ footer {
     display: none; }
   footer div {
     display: flex;
-    flex-direction: row;
-    align-items: center; }
-    footer div h3 {
-      display: inline;
-      font-size: 24px;
-      padding-left: 5px; }
-    footer div img {
-      display: inline;
-      height: 18px;
-      width: 18px; }
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0px; }
+    footer div div {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px; }
+      footer div div h3 {
+        display: inline;
+        /*font-size: 24px;
+                padding-left: 5px;*/
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: right;
+        max-height: 28px;
+        padding-left: 35px; }
 
 @media only screen and (min-width: 768px) {
   /*10 inch vertical tablet*/
   footer {
-    flex-direction: row; } }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    footer div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 64px;
+      width: 100%; }
+      footer div div {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        width: fit-content; } }
 
 /* -END- Pie del sitio (igual en todas las paginas)*/
