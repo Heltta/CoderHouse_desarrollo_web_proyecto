@@ -23,16 +23,14 @@ header{
     nav, 
     .dropdown-menu .dropdown-item{
         grid-area: nav;
-        /*position: relative;*/
-        font-size: 16px; /*Este tamaño varía según la pantalla*/
-        width: 100%;
-        background-color: none;
     }
     nav{
         &:not(.dropdown){
             display:none;
+            font-size: 16px; /*Este tamaño varía según la pantalla*/
+            width: 100%;
         }
-        ul, .dropdown-menu.show{
+        ul{
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
@@ -45,7 +43,7 @@ header{
                 display: inline-block;
                 position:relative;
 
-                a, .dropdown-item{
+                a{
                     /*Color (y formato) default de un hipervinculo*/
                     color: $Xiketic;
                     
@@ -119,15 +117,11 @@ header{
                 }
             }
         }
-        nav,
-        .dropdown-menu .dropdown-item{
+        nav{
             /*tablet horizontal*/
             font-size: 1.5em;
         }
         nav{
-            &.dropdown{
-                display: none;
-            }
             &:not(.dropdown){
                 display: flex;
                 justify-content: space-around;

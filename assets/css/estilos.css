@@ -122,6 +122,45 @@ p {
       line-height: 14px;
       color: #525A66; }
 
+.dropdown {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  width: inherit;
+  background-color: transparent; }
+  .dropdown button {
+    background-color: transparent; }
+  .dropdown.show .dropdown-menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    width: inherit;
+    background-color: #AEDCDE;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0px;
+    border: 0px; }
+    .dropdown.show .dropdown-menu li {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px; }
+      .dropdown.show .dropdown-menu li:active {
+        background-color: #ADFBFF; }
+  .dropdown.show .dropdown-item {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    text-align: left;
+    width: 100%;
+    padding: 0px; }
+    .dropdown.show .dropdown-item:active {
+      background-color: transparent; }
+
 /*-START- Seccion de barra de navegación (y encabezado)*/
 header {
   grid-area: Header;
@@ -145,15 +184,13 @@ header {
     display: none; }
   header nav,
   header .dropdown-menu .dropdown-item {
-    grid-area: nav;
-    /*position: relative;*/
+    grid-area: nav; }
+  header nav:not(.dropdown) {
+    display: none;
     font-size: 16px;
     /*Este tamaño varía según la pantalla*/
-    width: 100%;
-    background-color: none; }
-  header nav:not(.dropdown) {
-    display: none; }
-  header nav ul, header nav .dropdown-menu.show {
+    width: 100%; }
+  header nav ul {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -163,7 +200,7 @@ header {
   header nav ul li {
     display: inline-block;
     position: relative; }
-    header nav ul li a, header nav ul li .dropdown-item {
+    header nav ul li a {
       /*Color (y formato) default de un hipervinculo*/
       color: #171219;
       font-family: 'Roboto';
@@ -175,7 +212,7 @@ header {
       align-items: center;
       text-align: center;
       text-decoration: none; }
-      header nav ul li a:hover, header nav ul li .dropdown-item:hover {
+      header nav ul li a:hover {
         color: #171219;
         /*Color de los hipervinculos al pasar el puntero sobre ellos*/
         background-color: inherit;
@@ -185,7 +222,7 @@ header {
         animation-duration: 1s;
         animation-delay: 0.1s;
         border-radius: 10px; }
-      header nav ul li a:active, header nav ul li .dropdown-item:active {
+      header nav ul li a:active {
         color: white;
         /*Color de los hipervinculos hacer click sobre ellos*/ }
 
@@ -212,12 +249,9 @@ header {
       display: none; }
     header #Logo svg.desktop {
       display: block; }
-    header nav,
-    header .dropdown-menu .dropdown-item {
+    header nav {
       /*tablet horizontal*/
       font-size: 1.5em; }
-    header nav.dropdown {
-      display: none; }
     header nav:not(.dropdown) {
       display: flex;
       justify-content: space-around;
