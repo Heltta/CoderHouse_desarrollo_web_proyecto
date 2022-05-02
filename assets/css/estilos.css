@@ -50,25 +50,75 @@ p {
 
 /*START Colors*/
 /* END  Colors*/
-.Data_Formulary {
+.data_Formulary, .data_Formulary--signIn--logo {
   display: grid;
   grid-template-areas: "Title" "Data";
   grid-template-rows: fit-content(100%) fit-content(100%);
-  justify-content: center; }
-  .Data_Formulary .FormHeader {
+  justify-content: center;
+  padding: 22px 20px; }
+  .data_Formulary--signIn--logo {
+    grid-template-areas: "Logo" "Title" "Data";
+    grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
+    font-family: 'Roboto';
+    font-style: normal; }
+    .data_Formulary--signIn--logo svg {
+      grid-area: Logo;
+      margin-bottom: 14px; }
+  .data_Formulary .FormHeader, .data_Formulary--signIn--logo .FormHeader {
+    font-weight: 300;
     font-size: 24px;
-    text-align: center;
+    line-height: 28px;
+    text-align: left;
     grid-area: Title;
-    margin: 0.5rem 0; }
-  .Data_Formulary .DropBoxLabel {
-    display: block; }
-    .Data_Formulary .DropBoxLabel select {
+    margin: 0.5rem 0;
+    color: #000000;
+    margin-bottom: 14px; }
+  .data_Formulary form, .data_Formulary--signIn--logo form {
+    grid-area: Data; }
+    .data_Formulary form .form-label, .data_Formulary--signIn--logo form .form-label {
+      font-size: 14px;
+      line-height: 16px;
+      color: #525A66;
+      margin-bottom: 0px; }
+    .data_Formulary form .form-control, .data_Formulary--signIn--logo form .form-control {
+      background-color: #383E46;
+      height: 24px;
+      color: #FFFFFF;
+      line-height: 16px;
+      font-weight: 400;
+      font-size: 14px;
+      min-width: 285px;
+      padding-left: 7px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      border: 0px;
+      margin-bottom: 14px; }
+      .data_Formulary form .form-control::placeholder, .data_Formulary--signIn--logo form .form-control::placeholder {
+        color: #FFFFFF; }
+    .data_Formulary form .btn, .data_Formulary--signIn--logo form .btn {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16px;
+      padding: 2.5px 5.5px;
+      border-radius: 5px;
+      border: 0px;
+      color: #FFFFFF;
+      background-color: #00ACB4; }
+    .data_Formulary form .DropBoxLabel, .data_Formulary--signIn--logo form .DropBoxLabel {
       display: block; }
-  .Data_Formulary .CheckBoxLabel {
-    display: inline; }
-  .Data_Formulary form .text-muted {
-    font-size: 12px;
-    padding-top: 0; }
+      .data_Formulary form .DropBoxLabel select, .data_Formulary--signIn--logo form .DropBoxLabel select {
+        display: block; }
+    .data_Formulary form .CheckBoxLabel, .data_Formulary--signIn--logo form .CheckBoxLabel {
+      display: inline; }
+    .data_Formulary form .text-muted, .data_Formulary--signIn--logo form .text-muted {
+      font-size: 12px;
+      padding-top: 0; }
+    .data_Formulary form div span, .data_Formulary--signIn--logo form div span {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      color: #525A66; }
 
 /*-START- Seccion de barra de navegación (y encabezado)*/
 header {
@@ -347,8 +397,7 @@ sean cambiados por imgs para no depender de terceros */
 /*-END- Codigo centrado en accesorios.html*/
 /*-START- Codigo centrado en mi_pedido.html*/
 main section form {
-  display: block;
-  grid-area: Data; }
+  display: block; }
   main section form input {
     display: block; }
 
