@@ -458,17 +458,29 @@ main section form {
 
 /*-END- Codigo centrado en prespuesto.html*/
 /*-START- Codigo centrado en seguros.html*/
-section table.table thead {
-  background-color: #1B2CC1;
-  color: #0F8B8D; }
+section table.table {
+  max-width: 100vw; }
+  section table.table thead {
+    background-color: #1B2CC1;
+    color: #0F8B8D;
+    max-width: 100vw; }
+    section table.table thead tr th {
+      max-width: 25vw; }
+  section table.table tbody {
+    background-color: #FFEDE1; }
+    section table.table tbody tr th, section table.table tbody tr td {
+      max-width: 25vw; }
 
-section table.table tbody {
-  background-color: #FFEDE1; }
+section .carousel.slide {
+  max-width: 100vw; }
+  section .carousel.slide .carousel-item img {
+    width: 320px;
+    height: 180px;
+    margin: auto; }
 
-section .carousel.slide .carousel-item img {
-  width: 320px;
-  height: 180px;
-  margin: auto; }
+@media only screen and (min-width: 1024px) {
+  table.table {
+    min-width: 800px; } }
 
 /*-END- Codigo centrado en seguros.html*/
 #TopReminder {
