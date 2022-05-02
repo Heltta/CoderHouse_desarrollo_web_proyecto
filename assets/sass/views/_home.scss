@@ -3,7 +3,8 @@
 main {
     grid-area: Main;
     display: block;
-    @include content__background;
+    //@include content__background;
+    background: none;
     section div{
         display: inline;
         padding: 8px 0px;

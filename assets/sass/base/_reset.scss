@@ -16,6 +16,7 @@
 
 /*Formato por default del texto*/
 body{
+   @include content__background;
    display: grid;
    grid-template-areas:
        "Header"

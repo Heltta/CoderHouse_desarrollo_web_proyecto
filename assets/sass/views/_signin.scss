@@ -1,0 +1,17 @@
+#TopReminder{
+    display: block;
+    text-align: right;
+    padding-right: 37.5px;
+    background:none;
+    span{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #525A66;
+        a{
+            color: #00ACB4;
+        }
+    }
+}
