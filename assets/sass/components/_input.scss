@@ -1,0 +1,30 @@
+
+.Data_Formulary{
+    display: grid;
+    grid-template-areas: 
+                        "Title"
+                        "Data";
+    grid-template-rows: fit-content(100%) fit-content(100%);
+    justify-content: center;
+    .FormHeader{
+        font-size: 24px;
+        text-align: center;
+        grid-area: Title;
+        margin: 0.5rem 0;
+    }
+    .DropBoxLabel{
+        display:block;
+        select{
+            display: block;
+        }
+    }
+    .CheckBoxLabel {
+        display: inline;
+    }
+    form {
+        .text-muted{
+            font-size: 12px;
+            padding-top: 0;
+        }
+    }
+}
