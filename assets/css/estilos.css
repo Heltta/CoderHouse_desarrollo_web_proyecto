@@ -21,7 +21,7 @@ body {
   grid-template-areas: "Header" "Main" "Footer";
   grid-template-rows: 90px auto 94px;
   /*existe un media query que cambia la ultima fila en el footer section*/
-  font-family: 'Montserrat', 'Metropolis', 'Raleway', 'Geomanist';
+  font-family: 'Montserrat', 'Metropolis', 'Roboto';
   font-weight: normal;
   font-size: 16px;
   overflow-x: hidden;
