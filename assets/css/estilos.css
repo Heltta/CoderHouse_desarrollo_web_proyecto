@@ -161,6 +161,10 @@ p {
     .dropdown.show .dropdown-item:active {
       background-color: transparent; }
 
+@media only screen and (min-width: 1024px) {
+  .dropdown {
+    display: none; } }
+
 /*-START- Seccion de barra de navegación (y encabezado)*/
 header {
   grid-area: Header;
