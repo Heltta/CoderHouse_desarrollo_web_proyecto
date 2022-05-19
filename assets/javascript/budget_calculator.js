@@ -1,4 +1,4 @@
-const brands = ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
+const marcas = ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
 
 function datoMalIngresado(nombreInput){
     alert( nombreInput + " no encontrado/a, vuelva a intentar");
@@ -33,56 +33,58 @@ class PHONE{
 }
 
 //sigo usando arreglos como bases de datos precarias
-const celulares = [];
-celulares.push(new PHONE("redmi note 10", "xiaomi", 500));
-celulares.push(new PHONE("redmi note 9", "xiaomi", 400));
-celulares.push(new PHONE("redmi note 8", "xiaomi", 300));
-celulares.push(new PHONE("redmi note 7", "xiaomi", 200));
-celulares.push(new PHONE("iphone 10", "apple", 1000));
-celulares.push(new PHONE("iphone 9", "apple", 900));
-celulares.push(new PHONE("iphone 8", "apple", 800));
-celulares.push(new PHONE("iphone 7", "apple", 700));
-celulares.push(new PHONE("iphone 6", "apple", 600));
-celulares.push(new PHONE("galaxy 10", "samsung", 950));
-celulares.push(new PHONE("galaxy 9", "samsung", 850));
-celulares.push(new PHONE("galaxy 8", "samsung", 750));
-celulares.push(new PHONE("galaxy 7", "samsung", 650));
-celulares.push(new PHONE("galaxy 6", "samsung", 550));
-celulares.push(new PHONE("nexus 10", "lg", 800));
-celulares.push(new PHONE("nexus 9", "lg", 720));
-celulares.push(new PHONE("nexus 8", "lg", 680));
-celulares.push(new PHONE("nexus 7", "lg", 560));
-celulares.push(new PHONE("nexus 6", "lg", 250));
-//Fin de declaración de constantes, funciones (no anónimas) y clases
+const phoneStock = [];
+phoneStock.push(new PHONE("redmi note 10", "xiaomi", 500));
+phoneStock.push(new PHONE("redmi note 9", "xiaomi", 400));
+phoneStock.push(new PHONE("redmi note 8", "xiaomi", 300));
+phoneStock.push(new PHONE("redmi note 7", "xiaomi", 200));
+phoneStock.push(new PHONE("iphone 10", "apple", 1000));
+phoneStock.push(new PHONE("iphone 9", "apple", 900));
+phoneStock.push(new PHONE("iphone 8", "apple", 800));
+phoneStock.push(new PHONE("iphone 7", "apple", 700));
+phoneStock.push(new PHONE("iphone 6", "apple", 600));
+phoneStock.push(new PHONE("galaxy 10", "samsung", 950));
+phoneStock.push(new PHONE("galaxy 9", "samsung", 850));
+phoneStock.push(new PHONE("galaxy 8", "samsung", 750));
+phoneStock.push(new PHONE("galaxy 7", "samsung", 650));
+phoneStock.push(new PHONE("galaxy 6", "samsung", 550));
+phoneStock.push(new PHONE("nexus 10", "lg", 800));
+phoneStock.push(new PHONE("nexus 9", "lg", 720));
+phoneStock.push(new PHONE("nexus 8", "lg", 680));
+phoneStock.push(new PHONE("nexus 7", "lg", 560));
+phoneStock.push(new PHONE("nexus 6", "lg", 250));
 
-alert("Bienvenido al estimador de presupuestos LuFix");
+function estimarPresupuesto(celulares, brands){
+    //Input de MARCA
+    let marca = prompt("Ingrese la marca de su dispositivo").toUpperCase();
+    while(!brands.includes(marca)){
+        //Me quedo hasta que el usuario ingrese un input correcto
+        datoMalIngresado("Marca")
+        marca = prompt("Ingrese la marca de su dispositivo").toUpperCase();
+    }
+    //Acoto el rango de busqueda para los siguientes pasos
+    let celusFiltrados = celulares.filter( celu => celu.brand == marca);
 
-//Input de MARCA
-let marca = prompt("Ingrese la marca de su dispositivo").toUpperCase();
-while(!brands.includes(marca)){
-    //Me quedo hasta que el usuario ingrese un input correcto
-    datoMalIngresado("Marca")
-    marca = prompt("Ingrese la marca de su dispositivo").toUpperCase();
+    //Input de MODELO
+    let modelo = prompt("Ingrese el modelo de su dispositivo").toUpperCase();
+    while(!celusFiltrados.some(celu => celu.model == modelo)){
+        //Me quedo hasta que el usuario ingrese un input correcto
+        datoMalIngresado("Modelo");
+        modelo = prompt("Ingrese el modelo de su dispositivo").toUpperCase();
+    }
+    let celuRoto = celusFiltrados.find(celu => celu.model == modelo);
+
+    //Input de MODELO
+    let presupuesto = celuRoto.presupuestarArreglo(prompt("Ingrese su problema o parte dañada"));
+    while(presupuesto == -1){
+        //Me quedo hasta que el usuario ingrese un input correcto
+        datoMalIngresado("Problema");
+        presupuesto = celuRoto.presupuestarArreglo(prompt("Ingrese su problema o parte dañada"));
+    }
+
+    alert("El presupuesto de su reparación es " + presupuesto + " dolares");
 }
-//Acoto el rango de busqueda para los siguientes pasos
-let celusFiltrados = celulares.filter( celu => celu.brand == marca);
 
-//Input de MODELO
-let modelo = prompt("Ingrese el modelo de su dispositivo").toUpperCase();
-while(!celusFiltrados.some(celu => celu.model == modelo)){
-    //Me quedo hasta que el usuario ingrese un input correcto
-    datoMalIngresado("Modelo");
-    modelo = prompt("Ingrese el modelo de su dispositivo").toUpperCase();
+while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
+    estimarPresupuesto(phoneStock, marcas);
 }
-let celuRoto = celusFiltrados.find(celu => celu.model == modelo);
-
-//Input de MODELO
-let presupuesto = celuRoto.presupuestarArreglo(prompt("Ingrese su problema o parte dañada"));
-while(presupuesto == -1){
-    //Me quedo hasta que el usuario ingrese un input correcto
-    datoMalIngresado("Problema");
-    presupuesto = celuRoto.presupuestarArreglo(prompt("Ingrese su problema o parte dañada"));
-}
-
-alert("El presupuesto de su reparación es " + presupuesto + " dolares");
-
