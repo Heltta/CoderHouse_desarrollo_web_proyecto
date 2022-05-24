@@ -85,60 +85,59 @@
         <section class="data_Formulary">
             <h2 class="FormHeader">Datos del dispositivo</h2>
             <form class="FormPresupuesto" action="#" method="post">
-                <label for="phone_brand"> Marca:
-                    <select  name="phone_brand">
-                        <option value="brand_00">No sabe</option>
-                        <option value="brand_01">Apple</option>
-                        <option value="brand_03">Xiaomi</option>
-                        <option value="brand_04">Samsung</option>
-                        <option value="brand_05">LG</option>
-                    </select>
-                </label>
-                <label for="phone_model"> Modelo:
-                    <select  name="phone_model">
-                        <!--Al aprender javascript lo configuraré para que solo salten las relevantes-->
-                        <option value="brand_00_model_00">No sabe</option>
-                        <option value="brand_01_model_00">No sabe</option>
-                        <option value="brand_01_model_01">iphone 10</option>
-                        <option value="brand_01_model_02">iphone 12</option>
-                        <option value="brand_02_model_00">No sabe</option>
-                        <option value="brand_02_model_01">Redmi 9</option>
-                        <option value="brand_02_model_02">Remi note 9</option>
-                        <option value="brand_03_model_00">No sabe</option>
-                        <option value="brand_03_model_01">Galaxy A13</option>
-                        <option value="brand_03_model_02">Galaxy tab s8</option>
-                    </select>
-                </label>
-            
-                <label for="phone_damage"> Problema:
-                    <select  name="phone_damage">
-                        <option value="damage_00">No sabe</option>
-                        <option value="damage_01">Pantalla rota</option>
-                        <option value="damage_02">Sin señal</option>
-                        <option value="damage_03">Microfono no responde</option>
-                        <option value="damage_04">Parlantes sin audio</option>
-                    </select>
-                </label>
+                <label for="brand"> Marca:</label>
+                <select id="brand" name="phone_brand">
+                    <option value="brand_00">No sabe</option>
+                    <option value="brand_01">Apple</option>
+                    <option value="brand_03">Xiaomi</option>
+                    <option value="brand_04">Samsung</option>
+                    <option value="brand_05">LG</option>
+                </select>
+                
+                <label for="model"> Modelo:</label>
+                <select id="model" name="phone_model">
+                    <!--Al aprender javascript lo configuraré para que solo salten las relevantes-->
+                    <option value="brand_00_model_00">No sabe</option>
+                    <option value="brand_01_model_00">No sabe</option>
+                    <option value="brand_01_model_01">iphone 10</option>
+                    <option value="brand_01_model_02">iphone 12</option>
+                    <option value="brand_02_model_00">No sabe</option>
+                    <option value="brand_02_model_01">Redmi 9</option>
+                    <option value="brand_02_model_02">Remi note 9</option>
+                    <option value="brand_03_model_00">No sabe</option>
+                    <option value="brand_03_model_01">Galaxy A13</option>
+                    <option value="brand_03_model_02">Galaxy tab s8</option>
+                </select>
+
+                <label for="damage"> Problema:</label>
+                <select id="damage" name="phone_damage">
+                    <option value="damage_00">No sabe</option>
+                    <option value="damage_01">Pantalla rota</option>
+                    <option value="damage_02">Sin señal</option>
+                    <option value="damage_03">Microfono no responde</option>
+                    <option value="damage_04">Parlantes sin audio</option>
+                </select>
+                
                 <!--Datos para el envío-->
-                <label for="departamento del domicilio"> Departamento:
-                    <select  name="departamento del domicilio">
-                        <option value="departamento_00">No aplica</option>
-                        <option value="departamento_01">Montevideo</option>
-                        <option value="departamento_02">Canelones</option>
-                        <option value="departamento_03">Maldonado</option>
-                        <option value="departamento_99">Resto del interior</option>
-                    </select>
-                </label>
-                <label for="barrio del domicilio"> Barrio:
-                    <select  name="barrio del domicilio">
-                        <option value="barrio_00">No aplica</option>
-                        <option value="barrio_01">Cordón</option>
-                        <option value="barrio_02">Pocitos</option>
-                        <option value="barrio_03">Centro</option>
-                        <option value="barrio_04">Pta. Carretas</option>
-                        <option value="barrio_99">Otro</option>
-                    </select>
-                </label>
+                <label for="department"> Departamento:</label>
+                <select id="department" name="departamento del domicilio">
+                    <option value="departamento_00">No aplica</option>
+                    <option value="departamento_01">Montevideo</option>
+                    <option value="departamento_02">Canelones</option>
+                    <option value="departamento_03">Maldonado</option>
+                    <option value="departamento_99">Resto del interior</option>
+                </select>
+
+                <label for="neighborhood"> Barrio:</label>
+                <select id="neighborhood" name="barrio del domicilio">
+                    <option value="barrio_00">No aplica</option>
+                    <option value="barrio_01">Cordón</option>
+                    <option value="barrio_02">Pocitos</option>
+                    <option value="barrio_03">Centro</option>
+                    <option value="barrio_04">Pta. Carretas</option>
+                    <option value="barrio_99">Otro</option>
+                </select>
+                
                 <!--cierre Datos para el envío-->
                 <!--cierre Datos para hacer un presupuesto automatizado-->
                 <!--Sección de información opcional-->
