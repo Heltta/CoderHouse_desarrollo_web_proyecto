@@ -209,9 +209,15 @@ function costoEnvio(){
 
 function mostrarPresupuesto(budget){
     //Mostraré el resultado en un div nuevo dentro del form
+    const resultID = "form__result";
+    let resultado = document.getElementById(resultID);
+    if (resultado != null){
+        resultado.remove();
+    }
     let formulario = document.getElementsByTagName("form")[0];
-    let resultado = document.createElement("div");
-    resultado.innerHTML = "soy resultado " + budget + " holas";
+    resultado = document.createElement("div");
+    resultado.id= resultID;
+    resultado.innerHTML = `Su reparación costará ${budget} dolares`;
     formulario.appendChild(resultado);
     return;
 }
