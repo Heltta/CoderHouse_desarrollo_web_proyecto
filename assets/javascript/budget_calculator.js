@@ -29,6 +29,23 @@ class PHONE{
     }
 }
 
+class FACTURA{
+    constructor(phone=null, budget=-1, shipping=-1, department=null){
+        this.repair = {
+            model: null,
+            cost: budget
+        }
+        if(phone != null){
+            this.repair.model = phone.model;
+        }
+        this.shipping = {
+            place: department,
+            cost: shipping
+        }
+    }
+
+}
+
 //sigo usando arreglos como bases de datos precarias
 const phoneStock = [];
 phoneStock.push(new PHONE("redmi note 10", "xiaomi", 500));
