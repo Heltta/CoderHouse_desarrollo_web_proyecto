@@ -84,6 +84,7 @@ function estimarPresupuesto(celulares, brands){
     }
 
     alert("El presupuesto de su reparación es " + presupuesto + " dolares");
+    return presupuesto;
 }
 
 function costoEnvio(){
@@ -203,12 +204,23 @@ function costoEnvio(){
     else{
         alert("Su costo de envío es " + Math.round(costo) + " dolares\npor enviar a " + departamento);
     }
-    return
+    return Math.round(costo);
 }
 
-while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
-    estimarPresupuesto(phoneStock, marcas);
+function mostrarPresupuesto(budget){
+    //Mostraré el resultado en un div nuevo dentro del form
+    let formulario = document.getElementsByTagName("form")[0];
+    let resultado = document.createElement("div");
+    resultado.innerHTML = "soy resultado " + budget + " holas";
+    formulario.appendChild(resultado);
+    return;
 }
+
+let presupuesto;
+while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
+    presupuesto = estimarPresupuesto(phoneStock, marcas);
+}
+mostrarPresupuesto(presupuesto);
 
 while(prompt("Quiere calcular el costo de envío [si/no]").toUpperCase() == "SI"){
     costoEnvio();
