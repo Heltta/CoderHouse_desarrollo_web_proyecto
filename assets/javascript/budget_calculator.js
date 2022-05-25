@@ -43,6 +43,34 @@ class FACTURA{
             cost: shipping
         }
     }
+    mostrarFactura(){
+        //Mostraré el resultado en un div nuevo dentro del form
+        //tambien muestra coste de envío
+        const resultID = "form__result";
+        let resultado = document.getElementById(resultID);
+        if (resultado != null){
+            resultado.remove();
+        }
+        let formulario = document.getElementsByTagName("form")[0];
+        resultado = document.createElement("div");
+        resultado.id= resultID;
+        resultado.innerHTML = 
+            `<h3>Resultado de la estimación</h3>
+            <div>Reparar su ${this.repair.model} costaría ${this.repair.cost} dolares</div>`;
+        if(this.shipping.cost>0){
+            resultado.innerHTML = resultado.innerHTML.concat(
+                `<div>Su envío a ${this.shipping.place} costaría ${this.shipping.cost} dolares</div>`
+            )
+        }
+        formulario.appendChild(resultado);
+    
+        formulario.querySelector("h3").style.fontSize = "16px";
+        formulario.querySelectorAll("div").forEach((asd) =>{
+            asd.style.fontSize = "14px";
+            asd.style.display = "block";
+        });
+        return;
+    }
 
 }
 
@@ -101,7 +129,7 @@ function estimarPresupuesto(celulares, brands){
     }
 
     alert("El presupuesto de su reparación es " + presupuesto + " dolares");
-    return presupuesto;
+    return {phone:celuRoto,budget:presupuesto};
 }
 
 function costoEnvio(){
@@ -221,7 +249,7 @@ function costoEnvio(){
     else{
         alert("Su costo de envío es " + Math.round(costo) + " dolares\npor enviar a " + departamento);
     }
-    return Math.round(costo);
+    return {place:departamento,shipping:Math.round(costo)};
 }
 
 function mostrarPresupuesto(budget= -1, shipping= -1){
@@ -252,7 +280,6 @@ function mostrarPresupuesto(budget= -1, shipping= -1){
     });
     return;
 }
-
 let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
 while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
     presupuesto = estimarPresupuesto(phoneStock, marcas);
@@ -262,4 +289,6 @@ let envio = -1;
 while(prompt("Quiere calcular el costo de envío [si/no]").toUpperCase() == "SI"){
     envio=costoEnvio();
 }
-mostrarPresupuesto(presupuesto, envio);
+//mostrarPresupuesto(presupuesto.budget, envio.shipping);
+const facturaFinal = new FACTURA(presupuesto.phone,presupuesto.budget,envio.shipping,envio.place);
+facturaFinal.mostrarFactura();
