@@ -207,8 +207,9 @@ function costoEnvio(){
     return Math.round(costo);
 }
 
-function mostrarPresupuesto(budget){
+function mostrarPresupuesto(budget= -1, shipping= -1){
     //Mostraré el resultado en un div nuevo dentro del form
+    //tambien muestra coste de envío
     const resultID = "form__result";
     let resultado = document.getElementById(resultID);
     if (resultado != null){
@@ -217,17 +218,31 @@ function mostrarPresupuesto(budget){
     let formulario = document.getElementsByTagName("form")[0];
     resultado = document.createElement("div");
     resultado.id= resultID;
-    resultado.innerHTML = `Su reparación costará ${budget} dolares`;
+    resultado.innerHTML = 
+        `<h3>Resultado de la estimación</h3>
+        <div>Su reparación costaría ${budget} dolares</div>`;
+    if(shipping>0){
+        resultado.innerHTML = resultado.innerHTML.concat(
+            `<div>Su envío costaría ${shipping} dolares</div>`
+        )
+    }
     formulario.appendChild(resultado);
+
+    formulario.querySelector("h3").style.fontSize = "16px";
+    formulario.querySelectorAll("div").forEach((asd) =>{
+        asd.style.fontSize = "14px";
+        asd.style.display = "block";
+    });
     return;
 }
 
-let presupuesto;
+let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
 while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
     presupuesto = estimarPresupuesto(phoneStock, marcas);
 }
-mostrarPresupuesto(presupuesto);
 
+let envio = -1;
 while(prompt("Quiere calcular el costo de envío [si/no]").toUpperCase() == "SI"){
-    costoEnvio();
+    envio=costoEnvio();
 }
+mostrarPresupuesto(presupuesto, envio);
