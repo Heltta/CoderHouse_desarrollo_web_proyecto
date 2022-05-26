@@ -75,26 +75,26 @@ class FACTURA{
 }
 
 //sigo usando arreglos como bases de datos precarias
-const phoneStock = [];
-phoneStock.push(new PHONE("redmi note 10", "xiaomi", 500));
-phoneStock.push(new PHONE("redmi note 9", "xiaomi", 400));
-phoneStock.push(new PHONE("redmi note 8", "xiaomi", 300));
-phoneStock.push(new PHONE("redmi note 7", "xiaomi", 200));
-phoneStock.push(new PHONE("iphone 10", "apple", 1000));
-phoneStock.push(new PHONE("iphone 9", "apple", 900));
-phoneStock.push(new PHONE("iphone 8", "apple", 800));
-phoneStock.push(new PHONE("iphone 7", "apple", 700));
-phoneStock.push(new PHONE("iphone 6", "apple", 600));
-phoneStock.push(new PHONE("galaxy 10", "samsung", 950));
-phoneStock.push(new PHONE("galaxy 9", "samsung", 850));
-phoneStock.push(new PHONE("galaxy 8", "samsung", 750));
-phoneStock.push(new PHONE("galaxy 7", "samsung", 650));
-phoneStock.push(new PHONE("galaxy 6", "samsung", 550));
-phoneStock.push(new PHONE("nexus 10", "lg", 800));
-phoneStock.push(new PHONE("nexus 9", "lg", 720));
-phoneStock.push(new PHONE("nexus 8", "lg", 680));
-phoneStock.push(new PHONE("nexus 7", "lg", 560));
-phoneStock.push(new PHONE("nexus 6", "lg", 250));
+const phoneStock = [
+    (new PHONE("redmi note 10", "xiaomi", 500)),
+    (new PHONE("redmi note 9", "xiaomi", 400)),
+    (new PHONE("redmi note 8", "xiaomi", 300)),
+    (new PHONE("redmi note 7", "xiaomi", 200)),
+    (new PHONE("iphone 10", "apple", 1000)),
+    (new PHONE("iphone 9", "apple", 900)),
+    (new PHONE("iphone 8", "apple", 800)),
+    (new PHONE("iphone 7", "apple", 700)),
+    (new PHONE("iphone 6", "apple", 600)),
+    (new PHONE("galaxy 10", "samsung", 950)),
+    (new PHONE("galaxy 9", "samsung", 850)),
+    (new PHONE("galaxy 8", "samsung", 750)),
+    (new PHONE("galaxy 7", "samsung", 650)),
+    (new PHONE("galaxy 6", "samsung", 550)),
+    (new PHONE("nexus 10", "lg", 800)),
+    (new PHONE("nexus 9", "lg", 720)),
+    (new PHONE("nexus 8", "lg", 680)),
+    (new PHONE("nexus 7", "lg", 560)),
+    (new PHONE("nexus 6", "lg", 250))];
 
 function estimarPresupuesto(celulares, brands){
     function datoMalIngresado(nombreInput){
