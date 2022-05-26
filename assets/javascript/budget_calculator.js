@@ -252,7 +252,23 @@ function costoEnvio(){
     return {place:departamento,shipping:Math.round(costo)};
 }
 
+let selectMarca = document.getElementById("brand");
+selectMarca.addEventListener("change", (event) =>
+    console.log(`El modelo es ${event.target.value}`));
+
+
+let formulario = document.querySelector("form");
+formulario.addEventListener("submit", (e) =>{
+    e.preventDefault();
+    console.log("soy el trigger del submit");
+    const brand = e.target.querySelector("#brand").value;
+    const model = e.target.querySelector("#model").value;
+    const damage = e.target.querySelector("#damage").value;
+    const nhood = e.target.querySelector("#neighborhood").value;
+})
+
 let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
+/*
 while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
     presupuesto = estimarPresupuesto(phoneStock, marcas);
 }
@@ -263,3 +279,4 @@ while(prompt("Quiere calcular el costo de envío [si/no]").toUpperCase() == "SI"
 }
 const facturaFinal = new FACTURA(presupuesto.phone,presupuesto.budget,envio.shipping,envio.place);
 facturaFinal.mostrarFactura();
+*/
