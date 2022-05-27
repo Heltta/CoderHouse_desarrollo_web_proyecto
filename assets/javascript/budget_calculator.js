@@ -94,7 +94,42 @@ const phoneStock = [
     (new PHONE("nexus_9", "lg", 720)),
     (new PHONE("nexus_8", "lg", 680)),
     (new PHONE("nexus_7", "lg", 560)),
-    (new PHONE("nexus_6", "lg", 250))];
+    (new PHONE("nexus_6", "lg", 250))
+];
+
+
+const coveredDepartment = [
+    {name:"Montevideo",     ticketLevel: 0},
+    {name:"Canelones",      ticketLevel: 1},
+    {name:"Maldonado",      ticketLevel: 1},
+    {name:"Florida",        ticketLevel: 1},
+    {name:"Lavalleja",      ticketLevel: 1},
+    {name:"San José",       ticketLevel: 1},
+    {name:"Colonia",        ticketLevel: 2},
+    {name:"Cerro Largo",    ticketLevel: 2},
+    {name:"Soriano",        ticketLevel: 2},
+    {name:"Rocha",          ticketLevel: 2},
+    {name:"Durazno",        ticketLevel: 2},
+    {name:"Treinta y Tres", ticketLevel: 2},
+    {name:"Flores",         ticketLevel: 2},
+    {name:"Tacuarembó",     ticketLevel: 3},
+    {name:"Paysandú",       ticketLevel: 3},
+    {name:"Río Negro",      ticketLevel: 3},
+    {name:"Rivera",         ticketLevel: 3},
+    {name:"Salto",          ticketLevel: 3},
+    {name:"Artigas",        ticketLevel: 3}
+];
+const coveredNeighborhood = [
+    {name:"Centro",         ticketLevel: 0},
+    {name:"Ciudad Vieja",   ticketLevel: 0},
+    {name:"Cordón",         ticketLevel: 0},
+    {name:"Punta carretas", ticketLevel: 0},
+    {name:"Prado",          ticketLevel: 1},
+    {name:"Tres cruces",    ticketLevel: 1},
+    {name:"Malvin",         ticketLevel: 1},
+    {name:"Manga",          ticketLevel: 2},
+    {name:"Carrasco",       ticketLevel: 2}
+];
 
 function estimarPresupuesto(celulares, brands){
     function datoMalIngresado(nombreInput){
@@ -134,38 +169,6 @@ function estimarPresupuesto(celulares, brands){
 
 function costoEnvio(){
     //Se asume que el cliente confirmó que quiere envio
-    const coveredDepartment = [
-        {name:"Montevideo",     ticketLevel: 0},
-        {name:"Canelones",      ticketLevel: 1},
-        {name:"Maldonado",      ticketLevel: 1},
-        {name:"Florida",        ticketLevel: 1},
-        {name:"Lavalleja",      ticketLevel: 1},
-        {name:"San José",       ticketLevel: 1},
-        {name:"Colonia",        ticketLevel: 2},
-        {name:"Cerro Largo",    ticketLevel: 2},
-        {name:"Soriano",        ticketLevel: 2},
-        {name:"Rocha",          ticketLevel: 2},
-        {name:"Durazno",        ticketLevel: 2},
-        {name:"Treinta y Tres", ticketLevel: 2},
-        {name:"Flores",         ticketLevel: 2},
-        {name:"Tacuarembó",     ticketLevel: 3},
-        {name:"Paysandú",       ticketLevel: 3},
-        {name:"Río Negro",      ticketLevel: 3},
-        {name:"Rivera",         ticketLevel: 3},
-        {name:"Salto",          ticketLevel: 3},
-        {name:"Artigas",        ticketLevel: 3}
-    ];
-    const coveredNeighborhood = [
-        {name:"Centro",         ticketLevel: 0},
-        {name:"Ciudad Vieja",   ticketLevel: 0},
-        {name:"Cordón",         ticketLevel: 0},
-        {name:"Punta carretas", ticketLevel: 0},
-        {name:"Prado",          ticketLevel: 1},
-        {name:"Tres cruces",    ticketLevel: 1},
-        {name:"Malvin",         ticketLevel: 1},
-        {name:"Manga",          ticketLevel: 2},
-        {name:"Carrasco",       ticketLevel: 2}
-    ];
 
     function zonaNoEncontrada(nombreInput){
         alert( nombreInput + " no esta dentro de nuestra zona de cobertura");
@@ -265,18 +268,31 @@ formulario.addEventListener("submit", (e) =>{
     const model = e.target.querySelector("#model").value.toUpperCase();
     const damage = e.target.querySelector("#damage").value.toUpperCase();
     const nhood = e.target.querySelector("#neighborhood").value.toUpperCase();
+
+    function datoEsVacio(dato){
+        const vacio = '';
+        return dato == vacio
+    }
     
-    const celuRoto = phoneStock.find(celu => celu.model == model);
-    let presupuesto = celuRoto.presupuestarArreglo(damage);
-    const facturaFinal = new FACTURA(
-        celuRoto.model,
-        presupuesto
-    );
-    facturaFinal.mostrarFactura();
+    if(!datoEsVacio(model) && !datoEsVacio(damage)){
+        const celuRoto = phoneStock.find(celu => celu.model == model);
+        let presupuesto = celuRoto.presupuestarArreglo(damage);
+        let envio = -1;
+        envio=costoEnvio();
+        const facturaFinal = new FACTURA(
+            celuRoto.model,
+            presupuesto,
+            envio.shipping,
+            envio.place
+        );
+        facturaFinal.mostrarFactura();
+    }else{
+        alert("ingrese correctamente los datos");
+    }
 })
 
-let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
-/*
+/*let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
+
 while(prompt("Quiere estimar su presupuesto [si/no]").toUpperCase() == "SI"){
     presupuesto = estimarPresupuesto(phoneStock, marcas);
 }
