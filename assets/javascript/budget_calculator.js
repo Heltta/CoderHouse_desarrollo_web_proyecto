@@ -134,9 +134,28 @@ const coveredNeighborhood = [
 
 //Eventos
 let selectMarca = document.getElementById("brand");
-selectMarca.addEventListener("change", (event) =>
-    console.log(`El modelo es ${event.target.value}`)
-);
+selectMarca.addEventListener("change", (event) =>{
+    document.getElementById("model").innerHTML = `<option value="">No sabe</option>`;
+    if(event.target.value == ''){
+        phoneStock.forEach((celu) => {
+            //El formato no es muy user friendly
+            document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
+                `<option value=${celu.model}>${celu.model.toLowerCase()}</option>`
+            )
+        })
+    }
+    else{
+        let celusFiltrados = phoneStock.filter( celu => celu.brand == event.target.value.toUpperCase());
+        
+        //pendiente convertir en funcion
+        celusFiltrados.forEach((celu) => {
+            //El formato no es muy user friendly
+            document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
+                `<option value=${celu.model}>${celu.model.toLowerCase()}</option>`
+            )
+        })
+    }
+});
 
 let selectDepartm = document.getElementById("department");
 selectDepartm.addEventListener("change", (event) =>{
