@@ -17,9 +17,9 @@ class PHONE{
         //el costo del arreglo es proporcional al costo del producto a arreglar
         problema = problema.toLowerCase();
         const tarifas = [{arreglo:"pantalla", costo:0.5},
-                        {arreglo:"puerto de carga", costo:0.020},
+                        {arreglo:"puerto_de_carga", costo:0.020},
                         {arreglo:"bateria", costo:0.1},
-                        {arreglo:"sin señal", costo: 0.3},
+                        {arreglo:"sin_señal", costo: 0.3},
                         {arreglo:"software", costo: 0.15}];
         const tarifaProblema = tarifas.find(element => element.arreglo == problema);
         if (tarifaProblema == undefined){
@@ -76,25 +76,25 @@ class FACTURA{
 
 //sigo usando arreglos como bases de datos precarias
 const phoneStock = [
-    (new PHONE("redmi note 10", "xiaomi", 500)),
-    (new PHONE("redmi note 9", "xiaomi", 400)),
-    (new PHONE("redmi note 8", "xiaomi", 300)),
-    (new PHONE("redmi note 7", "xiaomi", 200)),
-    (new PHONE("iphone 10", "apple", 1000)),
-    (new PHONE("iphone 9", "apple", 900)),
-    (new PHONE("iphone 8", "apple", 800)),
-    (new PHONE("iphone 7", "apple", 700)),
-    (new PHONE("iphone 6", "apple", 600)),
-    (new PHONE("galaxy 10", "samsung", 950)),
-    (new PHONE("galaxy 9", "samsung", 850)),
-    (new PHONE("galaxy 8", "samsung", 750)),
-    (new PHONE("galaxy 7", "samsung", 650)),
-    (new PHONE("galaxy 6", "samsung", 550)),
-    (new PHONE("nexus 10", "lg", 800)),
-    (new PHONE("nexus 9", "lg", 720)),
-    (new PHONE("nexus 8", "lg", 680)),
-    (new PHONE("nexus 7", "lg", 560)),
-    (new PHONE("nexus 6", "lg", 250))];
+    (new PHONE("redmi_note_10", "xiaomi", 500)),
+    (new PHONE("redmi_note_9", "xiaomi", 400)),
+    (new PHONE("redmi_note_8", "xiaomi", 300)),
+    (new PHONE("redmi_note_7", "xiaomi", 200)),
+    (new PHONE("iphone_10", "apple", 1000)),
+    (new PHONE("iphone_9", "apple", 900)),
+    (new PHONE("iphone_8", "apple", 800)),
+    (new PHONE("iphone_7", "apple", 700)),
+    (new PHONE("iphone_6", "apple", 600)),
+    (new PHONE("galaxy_10", "samsung", 950)),
+    (new PHONE("galaxy_9", "samsung", 850)),
+    (new PHONE("galaxy_8", "samsung", 750)),
+    (new PHONE("galaxy_7", "samsung", 650)),
+    (new PHONE("galaxy_6", "samsung", 550)),
+    (new PHONE("nexus_10", "lg", 800)),
+    (new PHONE("nexus_9", "lg", 720)),
+    (new PHONE("nexus_8", "lg", 680)),
+    (new PHONE("nexus_7", "lg", 560)),
+    (new PHONE("nexus_6", "lg", 250))];
 
 function estimarPresupuesto(celulares, brands){
     function datoMalIngresado(nombreInput){
@@ -261,10 +261,18 @@ let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) =>{
     e.preventDefault();
     console.log("soy el trigger del submit");
-    const brand = e.target.querySelector("#brand").value;
-    const model = e.target.querySelector("#model").value;
-    const damage = e.target.querySelector("#damage").value;
-    const nhood = e.target.querySelector("#neighborhood").value;
+    const brand = e.target.querySelector("#brand").value.toUpperCase();
+    const model = e.target.querySelector("#model").value.toUpperCase();
+    const damage = e.target.querySelector("#damage").value.toUpperCase();
+    const nhood = e.target.querySelector("#neighborhood").value.toUpperCase();
+    
+    const celuRoto = phoneStock.find(celu => celu.model == model);
+    let presupuesto = celuRoto.presupuestarArreglo(damage);
+    const facturaFinal = new FACTURA(
+        celuRoto.model,
+        presupuesto
+    );
+    facturaFinal.mostrarFactura();
 })
 
 let presupuesto = -1; //lo setteo a -1 por si quiero manejar errores
