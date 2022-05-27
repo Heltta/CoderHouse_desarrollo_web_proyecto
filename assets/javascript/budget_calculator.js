@@ -262,8 +262,30 @@ function costoEnvio(){
 
 let selectMarca = document.getElementById("brand");
 selectMarca.addEventListener("change", (event) =>
-    console.log(`El modelo es ${event.target.value}`));
+    console.log(`El modelo es ${event.target.value}`)
+);
 
+let selectDepartm = document.getElementById("department");
+selectDepartm.addEventListener("change", (event) =>{
+    //reseteo al default cada vez que la llamo
+    //asi evito que se stackeen los barrios
+    document.getElementById("neighborhood").innerHTML = `<option value="">No aplica</option>`;
+    if(event.target.value == coveredDepartment[0].name){
+        document.getElementById("neighborhood").innerHTML = 
+        `
+            <option value="">No aplica</option>
+            <option value="Centro">Centro</option>
+            <option value="Ciudad Vieja">Ciudad Vieja</option>
+            <option value="Cordón">Cordón</option>
+            <option value="Punta carretas">Pta. Carretas</option>
+            <option value="Prado">Prado</option>
+            <option value="Tres cruces">Tres cruces</option>
+            <option value="Malvin">Malvin</option>
+            <option value="Manga">Manga</option>
+            <option value="Carrasco">Carrasco</option>
+        `;
+    }
+});
 
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) =>{
