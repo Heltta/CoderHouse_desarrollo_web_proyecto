@@ -62,6 +62,11 @@ class FACTURA{
                 `<div>Su envío a ${this.shipping.place} costaría ${this.shipping.cost} dolares</div>`
             )
         }
+        else if (this.shipping.cost==0){
+            resultado.innerHTML = resultado.innerHTML.concat(
+                `<div>Su envío a ${this.shipping.place} es gratis</div>`
+            )
+        }
         formulario.appendChild(resultado);
     
         formulario.querySelector("h3").style.fontSize = "16px";
@@ -262,11 +267,46 @@ selectMarca.addEventListener("change", (event) =>
 
 let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) =>{
+
+    function zonaNoEncontrada(nombreInput){
+        alert( nombreInput + " no esta dentro de nuestra zona de cobertura");
+        return
+    }
+    
+    function getLvL(lugar, zonaCubierta){
+        let zonaObj = zonaCubierta.find(zona => zona.name.toUpperCase() == lugar);
+        if(undefined == zonaObj){
+            return -1;
+        }
+        console.log("zonaObj es \n");
+        console.log(zonaObj);
+        console.log(zonaObj.ticketLevel);
+        console.log(typeof(zonaObj.ticketLevel));
+        return parseInt(zonaObj.ticketLevel);
+    }
+
+    function ticketCost(departmentLvL, nhoodLvL){
+        //Precondicion: Si el barrio no aplica, nhoodLvL es -1
+        const departmentCost = [0, 10, 30, 35]; //dolares
+        const nhoodCost = [0, 5, 8]; //dolares
+        console.log("nivel hood es \n");
+        console.log(nhoodLvL);
+        console.log("nivel depmt \n");
+        console.log(departmentLvL);
+        if (nhoodLvL>0){
+            console.log("costo hood es \n");
+            console.log(nhoodCost[nhoodLvL]);
+            return departmentCost[departmentLvL] + nhoodCost[nhoodLvL];
+        }
+        return departmentCost[departmentLvL];
+    }
+
     e.preventDefault();
     console.log("soy el trigger del submit");
     const brand = e.target.querySelector("#brand").value.toUpperCase();
     const model = e.target.querySelector("#model").value.toUpperCase();
     const damage = e.target.querySelector("#damage").value.toUpperCase();
+    const department = e.target.querySelector("#department").value.toUpperCase();
     const nhood = e.target.querySelector("#neighborhood").value.toUpperCase();
 
     function datoEsVacio(dato){
@@ -278,13 +318,29 @@ formulario.addEventListener("submit", (e) =>{
         const celuRoto = phoneStock.find(celu => celu.model == model);
         let presupuesto = celuRoto.presupuestarArreglo(damage);
         let envio = -1;
-        envio=costoEnvio();
-        const facturaFinal = new FACTURA(
-            celuRoto.model,
-            presupuesto,
-            envio.shipping,
-            envio.place
-        );
+        let facturaFinal;
+        if(datoEsVacio(department)){
+            facturaFinal = new FACTURA(
+                celuRoto.model,
+                presupuesto
+            );
+        }else{
+            let nivelInterdep = getLvL(department, coveredDepartment);
+            nivelUrbano = -1;
+            let costo = ticketCost(nivelInterdep,parseInt(nivelUrbano));
+            if(isNaN(costo)){
+                alert("error, costo isNaN");
+            }
+            else if(costo < 0){
+                alert("error, costo menor a 0");
+            }
+            facturaFinal = new FACTURA(
+                celuRoto.model,
+                presupuesto,
+                Math.round(costo),
+                department
+            );
+        }
         facturaFinal.mostrarFactura();
     }else{
         alert("ingrese correctamente los datos");
