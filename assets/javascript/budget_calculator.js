@@ -220,7 +220,7 @@ formulario.addEventListener("submit", (e) =>{
         let facturaFinal;
         if(datoEsVacio(department)){
             facturaFinal = new FACTURA(
-                celuRoto.model,
+                celuRoto,
                 presupuesto
             );
         }else{
@@ -242,7 +242,7 @@ formulario.addEventListener("submit", (e) =>{
                 alert("error, costo menor a 0");
             }
             facturaFinal = new FACTURA(
-                celuRoto.model,
+                celuRoto,
                 presupuesto,
                 Math.round(costo),
                 department
