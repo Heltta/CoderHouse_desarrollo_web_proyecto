@@ -327,6 +327,21 @@ formulario.addEventListener("submit", (e) =>{
         }else{
             let nivelInterdep = getLvL(department, coveredDepartment);
             nivelUrbano = -1;
+            if(department == coveredDepartment[0].name.toLocaleUpperCase()){
+                //0 es montevideo
+                //Input del barrio de montevideo
+                let barrio = prompt("Ingrese su barrio").toUpperCase();
+                nivelUrbano = getLvL(barrio, coveredNeighborhood);
+                while(nivelUrbano == -1){
+                    //Me quedo hasta que el usuario ingrese un input correcto
+                    zonaNoEncontrada(barrio);
+                    barrio = prompt("Ingrese su barrio").toUpperCase();
+                    nivelUrbano = getLvL(barrio, coveredNeighborhood);
+                }
+            }
+            else{
+                nivelUrbano = -1;
+            }
             let costo = ticketCost(nivelInterdep,parseInt(nivelUrbano));
             if(isNaN(costo)){
                 alert("error, costo isNaN");
