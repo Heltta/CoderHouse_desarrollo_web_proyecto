@@ -244,7 +244,12 @@ formulario.addEventListener("submit", (e) =>{
         }
         facturaFinal.mostrarFactura();
     }else{
-        alert("ingrese correctamente los datos");
+        Swal.fire({
+            title: 'Error!',
+            text: 'Ingrese correctamente los datos',
+            icon: 'error',
+            confirmButtonText: 'Entendido'
+          })
     }
 })
 //Fin de eventos
