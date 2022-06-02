@@ -4,15 +4,12 @@ class PHONE{
     constructor(model, brand="DESCONOCIDA", price=0){
         this.model = model.toUpperCase();
         this.brand = brand.toUpperCase();
-        if(isNaN(price)){
-            this.price = 0;
-        }else{
-            this.price = price;
-        }
+        (isNaN(price))? this.price = 0 : this.price = price;
         
     }
     presupuestarArreglo(problema){
         //el costo del arreglo es proporcional al costo del producto a arreglar
+        //return -1 si hay un error
         problema = problema.toLowerCase();
         const tarifas = [{arreglo:"pantalla", costo:0.5},
                         {arreglo:"puerto_de_carga", costo:0.020},
@@ -20,10 +17,7 @@ class PHONE{
                         {arreglo:"sin_señal", costo: 0.3},
                         {arreglo:"software", costo: 0.15}];
         const tarifaProblema = tarifas.find(element => element.arreglo == problema);
-        if (tarifaProblema == undefined){
-            return -1; //error al ingresar problema
-        }
-        return (this.price * tarifaProblema.costo);
+        return (tarifaProblema == undefined) ? -1 : (this.price * tarifaProblema.costo);
     }
 }
 
