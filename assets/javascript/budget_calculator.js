@@ -262,4 +262,13 @@ formulario.addEventListener("reset", (e) =>{
         factura.remove();
     }
 })
+
+window.addEventListener("load", (e) =>{
+    const lastBudgetString = localStorage.getItem("lastBudget");
+    if (lastBudgetString != null){
+        let lastBudgetObject = JSON.parse(lastBudgetString);
+        lastBudgetObject = Object.assign(new FACTURA, lastBudgetObject);
+        lastBudgetObject.mostrarFactura();
+    }
+})
 //Fin de eventos
