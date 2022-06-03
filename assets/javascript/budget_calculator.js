@@ -242,6 +242,8 @@ formulario.addEventListener("submit", (e) =>{
                 department
             );
         }
+        let facturJSON = JSON.stringify(facturaFinal);
+        localStorage.setItem("lastBudget", facturJSON);
         facturaFinal.mostrarFactura();
     }else{
         Swal.fire({
