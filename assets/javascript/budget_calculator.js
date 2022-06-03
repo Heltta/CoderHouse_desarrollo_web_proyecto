@@ -261,6 +261,7 @@ formulario.addEventListener("reset", (e) =>{
     if (factura != null){
         factura.remove();
     }
+    localStorage.removeItem("lastBudget")
 })
 
 window.addEventListener("load", (e) =>{
