@@ -35,17 +35,19 @@ class FACTURA{
             cost: shipping
         }
     }
+    static get resultID() {
+        return "form__result";
+    }
     mostrarFactura(){
         //Mostraré el resultado en un div nuevo dentro del form
         //tambien muestra coste de envío
-        const resultID = "form__result";
-        let resultado = document.getElementById(resultID);
+        let resultado = document.getElementById(FACTURA.resultID);
         if (resultado != null){
             resultado.remove();
         }
         let formulario = document.getElementsByTagName("form")[0];
         resultado = document.createElement("div");
-        resultado.id= resultID;
+        resultado.id= FACTURA.resultID;
         resultado.innerHTML = 
             `<h3>Resultado de la estimación</h3>
             <div>Reparar su ${this.repair.model} costaría ${this.repair.cost} dolares</div>`;
@@ -68,7 +70,6 @@ class FACTURA{
         });
         return;
     }
-
 }
 
 //sigo usando arreglos como bases de datos precarias
@@ -256,8 +257,7 @@ formulario.addEventListener("submit", (e) =>{
 })
 
 formulario.addEventListener("reset", (e) =>{
-    const resultID = "form__result";
-    const factura = e.target.querySelector(`#${resultID}`);
+    const factura = e.target.querySelector(`#${FACTURA.resultID}`);
     if (factura != null){
         factura.remove();
     }
