@@ -254,4 +254,12 @@ formulario.addEventListener("submit", (e) =>{
           })
     }
 })
+
+formulario.addEventListener("reset", (e) =>{
+    const resultID = "form__result";
+    const factura = e.target.querySelector(`#${resultID}`);
+    if (factura != null){
+        factura.remove();
+    }
+})
 //Fin de eventos
