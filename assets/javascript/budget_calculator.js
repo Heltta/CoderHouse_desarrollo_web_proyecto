@@ -28,9 +28,7 @@ class FACTURA{
             model: null,
             cost: budget
         }
-        if(phone != null){
-            this.repair.model = phone.model;
-        }
+        phone instanceof PHONE && (this.repair.model = phone?.model);
         this.shipping = {
             place: department,
             cost: shipping
@@ -43,9 +41,7 @@ class FACTURA{
         //Mostraré el resultado en un div nuevo dentro del form
         //tambien muestra coste de envío
         let resultado = document.getElementById(FACTURA.resultID);
-        if (resultado != null){
-            resultado.remove();
-        }
+        (resultado != null) && resultado.remove();
         let formulario = document.getElementsByTagName("form")[0];
         resultado = document.createElement("div");
         resultado.id= FACTURA.resultID;
