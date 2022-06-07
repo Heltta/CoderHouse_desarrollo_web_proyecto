@@ -256,9 +256,7 @@ formulario.addEventListener("submit", (e) =>{
 
 formulario.addEventListener("reset", (e) =>{
     const factura = e.target.querySelector(`#${FACTURA.resultID}`);
-    if (factura != null){
-        factura.remove();
-    }
+    (factura != null) && factura.remove();
     localStorage.removeItem("lastBudget")
 })
 
