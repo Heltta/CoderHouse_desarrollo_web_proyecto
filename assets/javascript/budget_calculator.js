@@ -1,11 +1,12 @@
-const marcas = ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
-
 class PHONE{
     constructor(model, brand="DESCONOCIDA", price=0){
         this.model = model.toUpperCase();
         this.brand = brand.toUpperCase();
         (isNaN(price))? this.price = 0 : this.price = price;
         
+    }
+    static get marcas(){
+        return ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
     }
     presupuestarArreglo(problema){
         //el costo del arreglo es proporcional al costo del producto a arreglar
@@ -127,11 +128,17 @@ const coveredNeighborhood = [
     {name:"Carrasco",       ticketLevel: 2}
 ];
 
+String.prototype.isBlank = function (){
+    //Returns true if the string is blank
+    const blank = '';
+    return this == blank
+}
+
 //Eventos
 let selectMarca = document.getElementById("brand");
 selectMarca.addEventListener("change", (event) =>{
     document.getElementById("model").innerHTML = `<option value="">No sabe</option>`;
-    if(event.target.value == ''){
+    if(event.target.value?.isBlank()){
         phoneStock.forEach((celu) => {
             //El formato no es muy user friendly
             document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
@@ -157,7 +164,7 @@ selectDepartm.addEventListener("change", (event) =>{
     //reseteo al default cada vez que la llamo
     //asi evito que se stackeen los barrios
     document.getElementById("neighborhood").innerHTML = `<option value="">No aplica</option>`;
-    if(event.target.value == coveredDepartment[0].name){
+    if(event.target.value == coveredDepartment[0].name){ //(si es montevideo)
         document.getElementById("neighborhood").innerHTML = 
         `
             <option value="">No aplica</option>
@@ -203,17 +210,12 @@ formulario.addEventListener("submit", (e) =>{
     const damage = e.target.querySelector("#damage").value.toUpperCase();
     const department = e.target.querySelector("#department").value.toUpperCase();
     const nhood = e.target.querySelector("#neighborhood").value.toUpperCase();
-
-    function datoEsVacio(dato){
-        const vacio = '';
-        return dato == vacio
-    }
     
-    if(!datoEsVacio(model) && !datoEsVacio(damage)){
+    if(!model.isBlank() && !damage.isBlank()){
         const celuRoto = phoneStock.find(celu => celu.model == model);
         let presupuesto = celuRoto.presupuestarArreglo(damage);
         let facturaFinal;
-        if(datoEsVacio(department)){
+        if(department.isBlank()){
             facturaFinal = new FACTURA(
                 celuRoto,
                 presupuesto
