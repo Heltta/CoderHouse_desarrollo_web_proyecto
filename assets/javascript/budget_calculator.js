@@ -245,9 +245,17 @@ formulario.addEventListener("submit", (e) =>{
         localStorage.setItem("lastBudget", facturJSON);
         facturaFinal.mostrarFactura();
     }else{
+        let datosFaltantes;
+        if(model.isBlank() && damage.isBlank()){
+            datosFaltantes = 'el modelo y el problema';
+        }else if(model.isBlank()){
+            datosFaltantes = 'el modelo';
+        }else{
+            datosFaltantes = 'el problema'
+        }
         Swal.fire({
-            title: 'Error!',
-            text: 'Ingrese correctamente los datos',
+            title: 'Error! Faltan datos',
+            text: `Ingrese ${datosFaltantes} de su celular`,
             icon: 'error',
             confirmButtonText: 'Entendido'
           })
