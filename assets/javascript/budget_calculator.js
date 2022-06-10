@@ -276,6 +276,11 @@ formulario.addEventListener("reset", (e) =>{
     const factura = e.target.querySelector(`#${FACTURA.resultID}`);
     (factura != null) && factura.remove();
     localStorage.removeItem("lastBudget")
+    Swal.fire({
+        title: 'Borrado!',
+        icon: 'success',
+        text: 'Los datos ingresados y sus cálculos previos han sido borrados del navegador'
+    })
 })
 
 window.addEventListener("load", (e) =>{
