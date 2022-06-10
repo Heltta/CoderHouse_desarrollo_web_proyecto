@@ -237,12 +237,6 @@ formulario.addEventListener("submit", (e) =>{
                 nivelUrbano = -1;
             }
             let costo = ticketCost(nivelInterdep,parseInt(nivelUrbano));
-            if(isNaN(costo)){
-                alert("error, costo isNaN");
-            }
-            else if(costo < 0){
-                alert("error, costo menor a 0");
-            }
             facturaFinal = new FACTURA(
                 celuRoto,
                 presupuesto,
