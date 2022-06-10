@@ -218,7 +218,7 @@ formulario.addEventListener("submit", (e) =>{
             );
         }else{
             let nivelInterdep = getLvL(department, coveredDepartment);
-            nivelUrbano = -1;
+            let nivelUrbano = -1;
             if(department == coveredDepartment[0].name.toLocaleUpperCase()){
                 //0 es montevideo
                 //Input del barrio de montevideo
