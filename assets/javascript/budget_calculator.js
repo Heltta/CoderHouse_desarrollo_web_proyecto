@@ -222,6 +222,15 @@ formulario.addEventListener("submit", (e) =>{
             if(department == coveredDepartment[0].name.toLocaleUpperCase()){
                 //0 es montevideo
                 //Input del barrio de montevideo
+                if(nhood.isBlank()){
+                    Swal.fire({
+                        title: 'Error! Faltan datos',
+                        text: `Ingrese el barrio del envío`,
+                        icon: 'error',
+                        confirmButtonText: 'Entendido'
+                    })
+                    return
+                }
                 nivelUrbano = getLvL(nhood, coveredNeighborhood);
             }
             else{
@@ -259,6 +268,7 @@ formulario.addEventListener("submit", (e) =>{
             icon: 'error',
             confirmButtonText: 'Entendido'
           })
+          return;
     }
 })
 
