@@ -1,6 +1,6 @@
 import { PHONE } from "./phone.js";
 
-class FACTURA{
+class BILL{
     constructor(phone=null, budget=-1, shipping=-1, department=null){
         this.repair = {
             model: null,
@@ -18,11 +18,11 @@ class FACTURA{
     mostrarFactura(){
         //Mostraré el resultado en un div nuevo dentro del form
         //tambien muestra coste de envío
-        let resultado = document.getElementById(FACTURA.resultID);
+        let resultado = document.getElementById(BILL.resultID);
         (resultado != null) && resultado.remove();
         let formulario = document.getElementsByTagName("form")[0];
         resultado = document.createElement("div");
-        resultado.id= FACTURA.resultID;
+        resultado.id= BILL.resultID;
         resultado.innerHTML = 
             `<h3>Resultado de la estimación</h3>
             <div>Reparar su ${this.repair.model} costaría ${this.repair.cost} dolares</div>`;
@@ -48,4 +48,4 @@ class FACTURA{
 }
 
 export { PHONE } from "./phone.js";
-export { FACTURA };
+export { BILL };
