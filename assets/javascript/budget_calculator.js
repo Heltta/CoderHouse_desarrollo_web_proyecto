@@ -2,7 +2,7 @@ import { PHONE } from "./modules/phone.js";
 
 import { FACTURA } from "./modules/bill.js";
 
-import {phoneStock, coveredDepartment, coveredNeighborhood} from "./modules/data_base.js"
+import { phoneStock, coveredDepartment, coveredNeighborhood } from "./modules/data_base.js"
 
 String.prototype.isBlank = function (){
     //Returns true if the string is blank

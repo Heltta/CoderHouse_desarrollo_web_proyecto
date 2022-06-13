@@ -47,4 +47,5 @@ class FACTURA{
     }
 }
 
+export { PHONE } from "./phone.js";
 export { FACTURA };

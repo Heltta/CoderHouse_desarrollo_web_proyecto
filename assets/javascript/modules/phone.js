@@ -22,4 +22,4 @@ class PHONE{
     }
 }
 
-export {PHONE};
+export { PHONE };

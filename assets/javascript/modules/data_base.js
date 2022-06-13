@@ -55,4 +55,5 @@ const coveredNeighborhood = [
     {name:"Carrasco",       ticketLevel: 2}
 ];
 
-export {phoneStock, coveredDepartment, coveredNeighborhood};
+export { PHONE } from "./phone.js";
+export { phoneStock, coveredDepartment, coveredNeighborhood };
