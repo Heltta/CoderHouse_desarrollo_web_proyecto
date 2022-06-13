@@ -1,5 +1,3 @@
-import { PHONE } from "./modules/phone.js";
-
 import { BILL as FACTURA } from "./modules/bill.js";
 
 import { phoneStock, coveredDepartment, coveredNeighborhood } from "./modules/data_base.js"
