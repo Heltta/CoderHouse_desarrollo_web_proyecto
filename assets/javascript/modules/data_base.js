@@ -1,27 +1,16 @@
 import { PHONE } from "./phone.js";
 
 //sigo usando arreglos como bases de datos precarias
-const phoneStock = [
-    (new PHONE("redmi_note_10", "xiaomi", 500)),
-    (new PHONE("redmi_note_9", "xiaomi", 400)),
-    (new PHONE("redmi_note_8", "xiaomi", 300)),
-    (new PHONE("redmi_note_7", "xiaomi", 200)),
-    (new PHONE("iphone_10", "apple", 1000)),
-    (new PHONE("iphone_9", "apple", 900)),
-    (new PHONE("iphone_8", "apple", 800)),
-    (new PHONE("iphone_7", "apple", 700)),
-    (new PHONE("iphone_6", "apple", 600)),
-    (new PHONE("galaxy_10", "samsung", 950)),
-    (new PHONE("galaxy_9", "samsung", 850)),
-    (new PHONE("galaxy_8", "samsung", 750)),
-    (new PHONE("galaxy_7", "samsung", 650)),
-    (new PHONE("galaxy_6", "samsung", 550)),
-    (new PHONE("nexus_10", "lg", 800)),
-    (new PHONE("nexus_9", "lg", 720)),
-    (new PHONE("nexus_8", "lg", 680)),
-    (new PHONE("nexus_7", "lg", 560)),
-    (new PHONE("nexus_6", "lg", 250))
-];
+const phoneStock = [];
+fetch('../javascript/json/phonestock.json')
+    .then(answer => answer.json())
+    .then(parsedAnswer => {
+        //Answer's body is parsed as JSON
+        parsedAnswer.forEach(phone => { 
+            phoneStock.push(Object.assign(new PHONE, phone));
+        });
+    })
+
 const coveredDepartment = [
     {name:"Montevideo",     ticketLevel: 0},
     {name:"Canelones",      ticketLevel: 1},
