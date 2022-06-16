@@ -1,5 +1,5 @@
 class PHONE{
-    constructor(model, brand="DESCONOCIDA", price=0){
+    constructor(model='', brand="DESCONOCIDA", price=0){
         this.model = model.toUpperCase();
         this.brand = brand.toUpperCase();
         (isNaN(price))? this.price = 0 : this.price = price;
