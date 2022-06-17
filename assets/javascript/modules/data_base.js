@@ -11,27 +11,16 @@ fetch('../javascript/json/phonestock.json')
         });
     })
 
-const coveredDepartment = [
-    {name:"Montevideo",     ticketLevel: 0},
-    {name:"Canelones",      ticketLevel: 1},
-    {name:"Maldonado",      ticketLevel: 1},
-    {name:"Florida",        ticketLevel: 1},
-    {name:"Lavalleja",      ticketLevel: 1},
-    {name:"San José",       ticketLevel: 1},
-    {name:"Colonia",        ticketLevel: 2},
-    {name:"Cerro Largo",    ticketLevel: 2},
-    {name:"Soriano",        ticketLevel: 2},
-    {name:"Rocha",          ticketLevel: 2},
-    {name:"Durazno",        ticketLevel: 2},
-    {name:"Treinta y Tres", ticketLevel: 2},
-    {name:"Flores",         ticketLevel: 2},
-    {name:"Tacuarembó",     ticketLevel: 3},
-    {name:"Paysandú",       ticketLevel: 3},
-    {name:"Río Negro",      ticketLevel: 3},
-    {name:"Rivera",         ticketLevel: 3},
-    {name:"Salto",          ticketLevel: 3},
-    {name:"Artigas",        ticketLevel: 3}
-];
+const coveredDepartment = [];
+fetch('../javascript/json/departamentos.json')
+.then(awnser => awnser.json())
+.then(parsedAnswer => {
+    //Awnser's body is parsed as JSON
+    parsedAnswer.forEach(department => { 
+        coveredDepartment.push(department);
+    });
+})
+
 const coveredNeighborhood = [
     {name:"Centro",         ticketLevel: 0},
     {name:"Ciudad Vieja",   ticketLevel: 0},
