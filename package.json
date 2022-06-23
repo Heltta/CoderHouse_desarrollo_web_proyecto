@@ -21,6 +21,6 @@
   "homepage": "https://github.com/Heltta/LuFix_service_smartphones-HelgueraZanotta#readme",
   "devDependencies": {
     "node-sass": "^7.0.1",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.16"
   }
 }
