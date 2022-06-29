@@ -7,52 +7,66 @@
     grid-template-rows: fit-content(100%) fit-content(100%);
     justify-content: center;
     padding: 22px 20px;
+
     &--signIn{
         &--logo{
             @extend .data_Formulary;
+
             grid-template-areas: 
                                 "Logo"
                                 "Title"
                                 "Data";
             grid-template-rows: fit-content(100%) fit-content(100%) fit-content(100%);
+
+            font-family: 'Roboto';
+            font-style: normal;
+
             svg{
                 grid-area: Logo;
                 margin-bottom: 14px;
             }
-            font-family: 'Roboto';
-            font-style: normal;
         }
     }
     .FormHeader{
+        grid-area: Title;
+
+        margin: 0.5rem 0;
+        margin-bottom: 14px;
+
         font-weight: 300;
         font-size: 24px;
         line-height: 28px;
         text-align: left;
-        grid-area: Title;
-        margin: 0.5rem 0;
+
         color: #000000;
-        margin-bottom: 14px;
     }
     form {
         grid-area: Data;
+        
         font-weight: 400;
         font-size: 14px;
         line-height: 16px;
+
         .form-label{
+            margin-bottom: 0px;
+
             font-size: 14px;
             line-height: inherit;
+
             color: #525A66;
-            margin-bottom: 0px;
         }
         .form-control{
-            background-color: #383E46;
             height: 24px;
-            color: #FFFFFF;
-            line-height: inherit;
             min-width: 285px;
             border: 0px;
             margin-bottom: 14px;
             padding: 0px 7px;
+
+            line-height: inherit;
+
+            background-color: #383E46;
+            color: #FFFFFF;
+
             &:empty{
                 padding: 4px 7px;
             }
@@ -61,18 +75,22 @@
             }
         }
         .btn{
-            font-style: normal;
-            font-size: inherit;
-            line-height: inherit;
             padding: 2.5px 5.5px;
             border-radius: 5px;
             border: 0px;
+
+            font-style: normal;
+            font-size: inherit;
+            line-height: inherit;
+
             color: #FFFFFF;
             background-color: #00ACB4;
+            
             & ~ span{
                 font-size: 64px;
                 font-size: 12px;
                 line-height: 14px;
+
                 color: #525A66;     
             }
         }
