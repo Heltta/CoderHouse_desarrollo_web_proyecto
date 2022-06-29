@@ -35,40 +35,46 @@
     }
     form {
         grid-area: Data;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
         .form-label{
             font-size: 14px;
-            line-height: 16px;
+            line-height: inherit;
             color: #525A66;
             margin-bottom: 0px;
         }
         .form-control{
-            //inputs de texto
             background-color: #383E46;
             height: 24px;
             color: #FFFFFF;
-            line-height: 16px;
-            font-weight: 400;
-            font-size: 14px;
+            line-height: inherit;
             min-width: 285px;
-            padding-left: 7px;
-            padding-top: 4px;
-            padding-bottom: 4px;
             border: 0px;
             margin-bottom: 14px;
+            padding: 0px 7px;
+            &:empty{
+                padding: 4px 7px;
+            }
             &::placeholder{
                 color: #FFFFFF;
             }
         }
         .btn{
             font-style: normal;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 16px;
+            font-size: inherit;
+            line-height: inherit;
             padding: 2.5px 5.5px;
             border-radius: 5px;
             border: 0px;
             color: #FFFFFF;
             background-color: #00ACB4;
+            & ~ span{
+                font-size: 64px;
+                font-size: 12px;
+                line-height: 14px;
+                color: #525A66;     
+            }
         }
         .DropBoxLabel{
             display:block;
@@ -81,15 +87,6 @@
         }
         .text-muted{
             font-size: 12px;
-            padding-top: 0;
-        }
-        div{
-            span{
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 14px;
-                color: #525A66;
-            }
         }
     }
 }

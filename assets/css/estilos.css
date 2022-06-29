@@ -76,37 +76,42 @@ p {
     color: #000000;
     margin-bottom: 14px; }
   .data_Formulary form, .data_Formulary--signIn--logo form {
-    grid-area: Data; }
+    grid-area: Data;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px; }
     .data_Formulary form .form-label, .data_Formulary--signIn--logo form .form-label {
       font-size: 14px;
-      line-height: 16px;
+      line-height: inherit;
       color: #525A66;
       margin-bottom: 0px; }
     .data_Formulary form .form-control, .data_Formulary--signIn--logo form .form-control {
       background-color: #383E46;
       height: 24px;
       color: #FFFFFF;
-      line-height: 16px;
-      font-weight: 400;
-      font-size: 14px;
+      line-height: inherit;
       min-width: 285px;
-      padding-left: 7px;
-      padding-top: 4px;
-      padding-bottom: 4px;
       border: 0px;
-      margin-bottom: 14px; }
+      margin-bottom: 14px;
+      padding: 0px 7px; }
+      .data_Formulary form .form-control:empty, .data_Formulary--signIn--logo form .form-control:empty {
+        padding: 4px 7px; }
       .data_Formulary form .form-control::placeholder, .data_Formulary--signIn--logo form .form-control::placeholder {
         color: #FFFFFF; }
     .data_Formulary form .btn, .data_Formulary--signIn--logo form .btn {
       font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 16px;
+      font-size: inherit;
+      line-height: inherit;
       padding: 2.5px 5.5px;
       border-radius: 5px;
       border: 0px;
       color: #FFFFFF;
       background-color: #00ACB4; }
+      .data_Formulary form .btn ~ span, .data_Formulary--signIn--logo form .btn ~ span {
+        font-size: 64px;
+        font-size: 12px;
+        line-height: 14px;
+        color: #525A66; }
     .data_Formulary form .DropBoxLabel, .data_Formulary--signIn--logo form .DropBoxLabel {
       display: block; }
       .data_Formulary form .DropBoxLabel select, .data_Formulary--signIn--logo form .DropBoxLabel select {
@@ -114,13 +119,7 @@ p {
     .data_Formulary form .CheckBoxLabel, .data_Formulary--signIn--logo form .CheckBoxLabel {
       display: inline; }
     .data_Formulary form .text-muted, .data_Formulary--signIn--logo form .text-muted {
-      font-size: 12px;
-      padding-top: 0; }
-    .data_Formulary form div span, .data_Formulary--signIn--logo form div span {
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 14px;
-      color: #525A66; }
+      font-size: 12px; }
 
 .dropdown {
   display: flex;
