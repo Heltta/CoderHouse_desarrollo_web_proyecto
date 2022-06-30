@@ -87,8 +87,8 @@
         <section class="data_Formulary">
             <h2 class="FormHeader">Datos del dispositivo</h2>
             <form class="FormPresupuesto" action="#" method="post">
-                <label for="brand"> Marca:</label>
-                <select id="brand" name="phone_brand">
+                <label class="form-label" for="brand"> Marca:</label>
+                <select class="form-control" id="brand" name="phone_brand">
                     <option value="">No sabe</option>
                     <option value="xiaomi">Xiaomi</option>
                     <option value="apple">Apple</option>
@@ -96,8 +96,8 @@
                     <option value="lg">LG</option>
                 </select>
                 
-                <label for="model"> Modelo:</label>
-                <select id="model" name="phone_model">
+                <label class="form-label" for="model"> Modelo:</label>
+                <select class="form-control" id="model" name="phone_model">
                     <!--Al aprender javascript lo configuraré para que solo salten las relevantes-->
                     <option value="">No sabe</option>
                     <option value="redmi_note_10">redmi_note_10 </option>
@@ -121,8 +121,8 @@
                     <option value="nexus_6">nexus_6 </option>
                 </select>
 
-                <label for="damage"> Problema:</label>
-                <select id="damage" name="phone_damage">
+                <label class="form-label" for="damage"> Problema:</label>
+                <select class="form-control" id="damage" name="phone_damage">
                     <option value="">No sabe</option>
                     <option value="pantalla">Pantalla rota</option>
                     <option value="puerto_de_carga">Puerto de carga</option>
@@ -132,8 +132,8 @@
                 </select>
                 
                 <!--Datos para el envío-->
-                <label for="department"> Departamento:</label>
-                <select id="department" name="departamento del domicilio">
+                <label class="form-label" for="department"> Departamento:</label>
+                <select class="form-control" id="department" name="departamento del domicilio">
                     <option value="">No aplica</option>
                     <option value="Montevideo">Montevideo</option>
                     <option value="Canelones">Canelones</option>
@@ -156,16 +156,18 @@
                     <option value="Artigas">Artigas</option>
                 </select>
 
-                <label for="neighborhood"> Barrio:</label>
-                <select id="neighborhood" name="barrio del domicilio">
+                <label class="form-label" for="neighborhood"> Barrio:</label>
+                <select class="form-control" id="neighborhood" name="barrio del domicilio">
                     <option value="">No aplica</option>
                 </select>
                 
                 <!--cierre Datos para el envío-->
                 <!--cierre Datos para hacer un presupuesto automatizado-->
                 <!--Sección de información opcional-->
-                <button type="submit">Estimar presupuesto</button>
-                <input type="reset" value="Borrar datos">
+                <button class="btn btn-primary" type="submit">
+                    Estimar presupuesto
+                </button>
+                <input class="btn btn-secondary" type="reset" value="Borrar datos">
             </form>
         </section>
 
