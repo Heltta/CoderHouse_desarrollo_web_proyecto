@@ -80,7 +80,10 @@ p {
     font-weight: 400;
     font-size: 14px;
     line-height: 16px; }
+    .data_Formulary form div, .data_Formulary--signIn--logo form div {
+      display: block; }
     .data_Formulary form .form-label, .data_Formulary--signIn--logo form .form-label {
+      display: block;
       margin-bottom: 0px;
       font-size: 14px;
       line-height: inherit;
