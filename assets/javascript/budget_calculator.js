@@ -92,7 +92,8 @@ formulario.addEventListener("submit", (e) =>{
         if(department.isBlank()){
             facturaFinal = new FACTURA(
                 celuRoto,
-                presupuesto
+                presupuesto,
+                damage
             );
         }else{
             let nivelInterdep = getLvL(department, coveredDepartment);
@@ -118,8 +119,9 @@ formulario.addEventListener("submit", (e) =>{
             facturaFinal = new FACTURA(
                 celuRoto,
                 presupuesto,
+                damage,
                 Math.round(costo),
-                department
+                department,
             );
         }
         let facturJSON = JSON.stringify(facturaFinal);

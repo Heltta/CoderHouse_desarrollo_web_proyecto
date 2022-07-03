@@ -1,10 +1,11 @@
 import { PHONE } from "./phone.js";
 
 class BILL{
-    constructor(phone=null, budget=-1, shipping=-1, department=null){
+    constructor(phone=null, budget=-1,damage=null, shipping=-1, department=null){
         this.repair = {
             model: null,
-            cost: budget
+            cost: budget,
+            damage: damage
         }
         phone instanceof PHONE && (this.repair.model = phone?.model);
         this.shipping = {
@@ -24,8 +25,17 @@ class BILL{
         resultado = document.createElement("div");
         resultado.id= BILL.resultID;
         resultado.innerHTML = 
-            `<h3>Resultado de la estimación</h3>
-            <div>Reparar su ${this.repair.model} costaría ${this.repair.cost} dolares</div>`;
+            `
+            <h3>Estimado</h3>
+            <section>
+                <div>${this.repair.model}</div>
+                <div>${this.repair.damage}</div>
+                <div>
+                    <span>Reparación</span>
+                    <span>${this.repair.cost} dolares</span>
+                </div>
+            </section>
+            `;
         if(this.shipping.cost>0){
             resultado.innerHTML = resultado.innerHTML.concat(
                 `<div>Su envío a ${this.shipping.place} costaría ${this.shipping.cost} dolares</div>`
