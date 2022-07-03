@@ -8,15 +8,18 @@ class PHONE{
     static get marcas(){
         return ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
     }
+    static get damage(){ 
+        return [{arreglo:"pantalla", costo:0.5},
+                {arreglo:"puerto_de_carga", costo:0.020},
+                {arreglo:"bateria", costo:0.1},
+                {arreglo:"sin_señal", costo: 0.3},
+                {arreglo:"software", costo: 0.15}];
+    }
     presupuestarArreglo(problema){
         //el costo del arreglo es proporcional al costo del producto a arreglar
         //return -1 si hay un error
         problema = problema.toLowerCase();
-        const tarifas = [{arreglo:"pantalla", costo:0.5},
-                        {arreglo:"puerto_de_carga", costo:0.020},
-                        {arreglo:"bateria", costo:0.1},
-                        {arreglo:"sin_señal", costo: 0.3},
-                        {arreglo:"software", costo: 0.15}];
+        const tarifas = PHONE.damage;
         const tarifaProblema = tarifas.find(element => element.arreglo == problema);
         return (tarifaProblema == undefined) ? -1 : (this.price * tarifaProblema.costo);
     }
