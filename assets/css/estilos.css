@@ -500,6 +500,10 @@ section .carousel.slide {
     line-height: 14px;
     color: #525A66; }
     #TopReminder span a {
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      font-style: inherit;
       color: #00ACB4; }
 
 /*-START- Pie del sitio (igual en todas las paginas)*/
