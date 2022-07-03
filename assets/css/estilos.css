@@ -125,6 +125,14 @@ p {
       display: inline; }
     .data_Formulary form .text-muted, .data_Formulary--signIn--logo form .text-muted {
       font-size: 12px; }
+    .data_Formulary form #form__result, .data_Formulary--signIn--logo form #form__result {
+      font-size: 14px;
+      display: block; }
+      .data_Formulary form #form__result h3, .data_Formulary--signIn--logo form #form__result h3 {
+        font-size: 16px; }
+      .data_Formulary form #form__result div, .data_Formulary--signIn--logo form #form__result div {
+        font-size: 14px;
+        display: block; }
 
 .dropdown {
   display: flex;

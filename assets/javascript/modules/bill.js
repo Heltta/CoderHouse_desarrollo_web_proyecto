@@ -38,11 +38,6 @@ class BILL{
         }
         formulario.appendChild(resultado);
     
-        formulario.querySelector("h3").style.fontSize = "16px";
-        formulario.querySelectorAll("div").forEach((asd) =>{
-            asd.style.fontSize = "14px";
-            asd.style.display = "block";
-        });
         return;
     }
 }
