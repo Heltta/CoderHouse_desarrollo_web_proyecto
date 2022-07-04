@@ -122,6 +122,7 @@ formulario.addEventListener("submit", (e) =>{
                 damage,
                 Math.round(costo),
                 department,
+                (nivelUrbano>=0)? nhood: null,
             );
         }
         let facturJSON = JSON.stringify(facturaFinal);

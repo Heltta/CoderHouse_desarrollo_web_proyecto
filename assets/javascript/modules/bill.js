@@ -1,7 +1,7 @@
 import { PHONE } from "./phone.js";
 
 class BILL{
-    constructor(phone=null, budget=-1,damage=null, shipping=-1, department=null){
+    constructor(phone=null, budget=-1,damage=null, shipping=-1, department=null, neighborhood = null){
         this.repair = {
             model: null,
             cost: budget,
@@ -10,6 +10,7 @@ class BILL{
         phone instanceof PHONE && (this.repair.model = phone?.model);
         this.shipping = {
             place: department,
+            zone: neighborhood,
             cost: shipping
         }
     }
@@ -36,14 +37,21 @@ class BILL{
                 </div>
             </section>
             `;
-        if(this.shipping.cost>0){
+        if(this.shipping.cost>=0){
             resultado.innerHTML = resultado.innerHTML.concat(
-                `<div>Su envío a ${this.shipping.place} costaría ${this.shipping.cost} dolares</div>`
-            )
-        }
-        else if (this.shipping.cost==0){
-            resultado.innerHTML = resultado.innerHTML.concat(
-                `<div>Su envío a ${this.shipping.place} es gratis</div>`
+                `
+                <div>${this.shipping.place}</div>
+                ${(this.shipping.zone == null)? 
+                    '':
+                    `<div>${this.shipping.zone}</div>`}
+                <div>
+                    <span>Envío</span>
+                    <span>${(this.shipping.cost==0)? 
+                        `Gratis`:
+                        `${this.shipping.cost} dolares`} 
+                    </span>
+                </div>
+                `
             )
         }
         formulario.appendChild(resultado);
