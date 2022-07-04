@@ -27,8 +27,10 @@ selectMarca.addEventListener("change", (event) =>{
         celusFiltrados.forEach((celu) => {
             //El formato no es muy user friendly
             document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
-                `<option value=${celu.model}>${celu.model.toLowerCase()}</option>`
+                `<option>${celu.model.toLowerCase()}</option>`
+                
             )
+            document.getElementById("model").querySelector("option:last-of-type").value = celu.model;
         })
     }
 });
