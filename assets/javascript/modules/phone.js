@@ -9,17 +9,25 @@ class PHONE{
         return ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
     }
     static get damage(){ 
-        return [{arreglo:"pantalla", costo:0.5},
-                {arreglo:"puerto_de_carga", costo:0.020},
-                {arreglo:"bateria", costo:0.1},
-                {arreglo:"sin_señal", costo: 0.3},
-                {arreglo:"software", costo: 0.15}];
+        return [{arreglo:"Pantalla", costo:0.5},
+                {arreglo:"Puerto de entrada", costo:0.020},
+                {arreglo:"Bateria", costo:0.1},
+                {arreglo:"Señal", costo: 0.3},
+                {arreglo:"Software", costo: 0.15}];
     }
     presupuestarArreglo(problema){
         //el costo del arreglo es proporcional al costo del producto a arreglar
         //return -1 si hay un error
+
+        //Me aseguro que las mayusculas no sean un problema
         problema = problema.toLowerCase();
         const tarifas = PHONE.damage;
+        tarifas.forEach(element => {
+            //tarifas no comparte memoria con PHONE.damage
+            element.arreglo = element.arreglo.toLowerCase();
+            
+        });
+
         const tarifaProblema = tarifas.find(element => element.arreglo == problema);
         return (tarifaProblema == undefined) ? -1 : (this.price * tarifaProblema.costo);
     }

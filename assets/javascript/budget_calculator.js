@@ -1,6 +1,6 @@
 import { BILL as FACTURA } from "./modules/bill.js";
 
-import { phoneStock, coveredDepartment, coveredNeighborhood } from "./modules/data_base.js"
+import { phoneStock, coveredDepartment, coveredNeighborhood, PHONE } from "./modules/data_base.js"
 
 String.prototype.isBlank = function (){
     //Returns true if the string is blank
@@ -156,5 +156,14 @@ window.addEventListener("load", (e) =>{
         lastBudgetObject = Object.assign(new FACTURA, lastBudgetObject);
         lastBudgetObject.mostrarFactura();
     }
+
+    document.getElementById("damage").innerHTML = `<option value="">No sabe</option>`;
+
+    PHONE.damage.forEach((problema) => {
+        document.getElementById("damage").innerHTML = document.getElementById("damage").innerHTML.concat(
+            `<option>${problema.arreglo}</option>`
+        )
+        document.getElementById("damage").querySelector("option:last-of-type").value = problema.arreglo;
+    })
 })
 //Fin de eventos
