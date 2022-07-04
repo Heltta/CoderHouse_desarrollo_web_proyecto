@@ -41,19 +41,16 @@ selectDepartm.addEventListener("change", (event) =>{
     //asi evito que se stackeen los barrios
     document.getElementById("neighborhood").innerHTML = `<option value="">No aplica</option>`;
     if(event.target.value == coveredDepartment[0].name){ //(si es montevideo)
-        document.getElementById("neighborhood").innerHTML = 
-        `
-            <option value="">No aplica</option>
-            <option value="Centro">Centro</option>
-            <option value="Ciudad Vieja">Ciudad Vieja</option>
-            <option value="Cordón">Cordón</option>
-            <option value="Punta carretas">Pta. Carretas</option>
-            <option value="Prado">Prado</option>
-            <option value="Tres cruces">Tres cruces</option>
-            <option value="Malvin">Malvin</option>
-            <option value="Manga">Manga</option>
-            <option value="Carrasco">Carrasco</option>
-        `;
+
+        document.getElementById("neighborhood").innerHTML = `<option value="">No aplica</option>`;
+
+        coveredNeighborhood.forEach((barrio) => {
+            document.getElementById("neighborhood").innerHTML = document.getElementById("neighborhood").innerHTML.concat(
+                `<option>${barrio.name}</option>`
+                
+            )
+            document.getElementById("neighborhood").querySelector("option:last-of-type").value = barrio.name;
+        })
     }
 });
 
