@@ -12,20 +12,12 @@ String.prototype.isBlank = function (){
 let selectMarca = document.getElementById("brand");
 selectMarca.addEventListener("change", (event) =>{
     document.getElementById("model").innerHTML = `<option value="">No sabe</option>`;
-    if(event.target.value?.isBlank()){
-        phoneStock.forEach((celu) => {
-            //El formato no es muy user friendly
-            document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
-                `<option value=${celu.model}>${celu.model.toLowerCase()}</option>`
-            )
-        })
-    }
-    else{
+    if(!event.target.value?.isBlank()){
+        //El usuario ingreso una opcion distinta a "no sabe" en la marca
         let celusFiltrados = phoneStock.filter( celu => celu.brand == event.target.value.toUpperCase());
         
         //pendiente convertir en funcion
         celusFiltrados.forEach((celu) => {
-            //El formato no es muy user friendly
             document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
                 `<option>${celu.model.toLowerCase()}</option>`
                 
