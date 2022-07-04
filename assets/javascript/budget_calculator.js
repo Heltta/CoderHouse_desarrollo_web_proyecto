@@ -19,7 +19,7 @@ selectMarca.addEventListener("change", (event) =>{
         //pendiente convertir en funcion
         celusFiltrados.forEach((celu) => {
             document.getElementById("model").innerHTML = document.getElementById("model").innerHTML.concat(
-                `<option>${celu.model.toLowerCase()}</option>`
+                `<option>${celu.model}</option>`
                 
             )
             document.getElementById("model").querySelector("option:last-of-type").value = celu.model;
@@ -50,7 +50,7 @@ let formulario = document.querySelector("form");
 formulario.addEventListener("submit", (e) =>{
     
     function getLvL(lugar, zonaCubierta){
-        let zonaObj = zonaCubierta.find(zona => zona.name.toUpperCase() == lugar);
+        let zonaObj = zonaCubierta.find(zona => zona.name == lugar);
         if(undefined == zonaObj){
             return -1;
         }
@@ -62,19 +62,17 @@ formulario.addEventListener("submit", (e) =>{
         const departmentCost = [0, 10, 30, 35]; //dolares
         const nhoodCost = [0, 5, 8]; //dolares
         if (nhoodLvL>0){
-            console.log("costo hood es \n");
-            console.log(nhoodCost[nhoodLvL]);
             return departmentCost[departmentLvL] + nhoodCost[nhoodLvL];
         }
         return departmentCost[departmentLvL];
     }
 
     e.preventDefault();
-    const brand = e.target.querySelector("#brand").value.toUpperCase();
-    const model = e.target.querySelector("#model").value.toUpperCase();
-    const damage = e.target.querySelector("#damage").value.toUpperCase();
-    const department = e.target.querySelector("#department").value.toUpperCase();
-    const nhood = e.target.querySelector("#neighborhood").value.toUpperCase();
+    const brand = e.target.querySelector("#brand").value;
+    const model = e.target.querySelector("#model").value;
+    const damage = e.target.querySelector("#damage").value;
+    const department = e.target.querySelector("#department").value;
+    const nhood = e.target.querySelector("#neighborhood").value;
     
     if(!model.isBlank() && !damage.isBlank()){
         const celuRoto = phoneStock.find(celu => celu.model == model);
@@ -89,7 +87,7 @@ formulario.addEventListener("submit", (e) =>{
         }else{
             let nivelInterdep = getLvL(department, coveredDepartment);
             let nivelUrbano = -1;
-            if(department == coveredDepartment[0].name.toLocaleUpperCase()){
+            if(department == coveredDepartment[0].name){
                 //0 es montevideo
                 //Input del barrio de montevideo
                 if(nhood.isBlank()){
@@ -164,6 +162,15 @@ window.addEventListener("load", (e) =>{
             `<option>${problema.arreglo}</option>`
         )
         document.getElementById("damage").querySelector("option:last-of-type").value = problema.arreglo;
+    })
+
+    document.getElementById("brand").innerHTML = `<option value="">No sabe</option>`;
+
+    PHONE.marcas.forEach((brand) => {
+        document.getElementById("brand").innerHTML = document.getElementById("brand").innerHTML.concat(
+            `<option>${brand}</option>`
+        )
+        document.getElementById("brand").querySelector("option:last-of-type").value = brand;
     })
 })
 //Fin de eventos

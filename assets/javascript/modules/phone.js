@@ -6,7 +6,7 @@ class PHONE{
         
     }
     static get marcas(){
-        return ["APPLE", "XIAOMI", "SAMSUNG", "LG", "DESCONOCIDA"];
+        return ["Apple", "Xiaomi", "Samsung", "LG"];
     }
     static get damage(){ 
         return [{arreglo:"Pantalla", costo:0.5},
