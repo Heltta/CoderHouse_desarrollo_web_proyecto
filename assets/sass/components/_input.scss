@@ -111,14 +111,45 @@
             font-size: 12px;
         }
         #form__result{
-            font-size: 14px;
             display: block;
+            padding: 0;
+            border: 1px solid ;
+            border-radius: 0px 25px 25px 25px;
+            margin: 2rem 0;
+            overflow: hidden;
+
+            border-color: #00ACB4;
+
+            font-size: 14px;
             h3{
-                font-size: 16px;
+                padding: 0.5rem 1rem;
+
+                background-color: #AEDCDE;
+
+                font-size: 24px;
+                line-height: 28px;                
+                font-weight: normal;
+                font-style: normal;
             }
             div{
-                font-size: 14px;
                 display: block;
+                padding: 0.5rem 1rem;
+
+                background-color: #FFFFFF;
+                color: #525A66;
+
+                font-size: 12px;
+                line-height: 14px;
+                &:last-of-type{
+                    display: flex;
+                    justify-content: space-between;
+                    span{
+                        color:#000000;
+
+                        font-size: inherit;
+                        line-height: inherit;
+                    }
+                }
             }
         }
     }
